@@ -26,18 +26,35 @@
 
             <!-- Desktop Nav Menu -->
             <nav class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="#insights" class="nav-link">Insights</a>
-                <a href="#prediction" class="nav-cta-btn">Start Prediction</a>
+                <a href="#home" class="nav-link active" data-i18n="nav_home">Home</a>
+                <a href="#how-it-works" class="nav-link" data-i18n="nav_how_it_works">How It Works</a>
+                <a href="#insights" class="nav-link" data-i18n="nav_insights">Insights</a>
+                <a href="#prediction" class="nav-cta-btn" data-i18n="nav_start_prediction">Start Prediction</a>
             </nav>
 
-            <!-- Mobile Hamburger Toggle -->
-            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            <!-- Right Header Controls -->
+            <div class="nav-controls">
+                <!-- Language Selector -->
+                <div class="lang-selector-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="globe-icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <select id="lang-select" class="lang-select" aria-label="Select Language">
+                        <option value="en" selected>English</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="mr">मराठी</option>
+                    </select>
+                </div>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -51,26 +68,26 @@
                 <div class="hero-content">
                     <div class="hero-pill">
                         <span class="pulse-indicator"></span>
-                        MAHARASHTRA URBAN & RURAL VALUATION ENGINE
+                        <span data-i18n="hero_pill">MAHARASHTRA URBAN & RURAL VALUATION ENGINE</span>
                     </div>
-                    <h1 class="hero-title">
+                    <h1 class="hero-title" data-i18n="hero_title">
                         Know the Value of Your Next Rental.
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">
                         AI-powered rental price estimation for Urban, Suburban, and Rural Maharashtra.
                     </p>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="hero_description">
                         Estimate the monthly rental value of a residential property using machine learning models trained on property characteristics, location, urban/rural area classification, size, furnishing, amenities and other factors.
                     </p>
                     <div class="hero-buttons">
                         <a href="#prediction" class="btn btn-primary">
-                            <span>Estimate Rental Price</span>
+                            <span data-i18n="hero_btn_estimate">Estimate Rental Price</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
                         </a>
-                        <a href="#how-it-works" class="btn btn-secondary">
+                        <a href="#how-it-works" class="btn btn-secondary" data-i18n="hero_btn_explore">
                             Explore How It Works
                         </a>
                     </div>
@@ -80,37 +97,37 @@
                 <div class="hero-visual-wrapper">
                     <div class="demo-card">
                         <div class="demo-card-top">
-                            <span class="demo-badge">DEMO PREVIEW</span>
-                            <span class="demo-status">ACTIVE PIPELINE</span>
+                            <span class="demo-badge" data-i18n="demo_badge">DEMO PREVIEW</span>
+                            <span class="demo-status" data-i18n="demo_status">ACTIVE PIPELINE</span>
                         </div>
                         <div class="demo-property-info">
-                            <span class="demo-kicker">RENTAL ESTIMATE</span>
-                            <h3>2 BHK Apartment</h3>
-                            <p class="demo-loc">Pune (Urban Core), Maharashtra</p>
+                            <span class="demo-kicker" data-i18n="demo_kicker">RENTAL ESTIMATE</span>
+                            <h3 data-i18n="demo_type">2 BHK Apartment</h3>
+                            <p class="demo-loc" data-i18n="demo_location">Pune (Urban Core), Maharashtra</p>
                         </div>
                         <div class="demo-estimate-box">
-                            <span class="est-label">Estimated Monthly Rent</span>
-                            <div class="est-price">₹32,500 <span class="est-period">/ mo</span></div>
+                            <span class="est-label" data-i18n="demo_est_label">Estimated Monthly Rent</span>
+                            <div class="est-price">₹32,500 <span class="est-period" data-i18n="demo_period">/ mo</span></div>
                             <div class="demo-progress-track">
                                 <div class="demo-progress-fill"></div>
                             </div>
                         </div>
                         <div class="demo-feature-row">
                             <div class="demo-spec">
-                                <span class="spec-label">Area</span>
-                                <span class="spec-val">950 sq ft</span>
+                                <span class="spec-label" data-i18n="demo_area_label">Area</span>
+                                <span class="spec-val" data-i18n="demo_area_val">950 sq ft</span>
                             </div>
                             <div class="demo-spec">
-                                <span class="spec-label">Area Type</span>
-                                <span class="spec-val">Urban</span>
+                                <span class="spec-label" data-i18n="demo_type_label">Area Type</span>
+                                <span class="spec-val" data-i18n="demo_type_val">Urban</span>
                             </div>
                             <div class="demo-spec">
-                                <span class="spec-label">Parking</span>
-                                <span class="spec-val">Available</span>
+                                <span class="spec-label" data-i18n="demo_parking_label">Parking</span>
+                                <span class="spec-val" data-i18n="demo_parking_val">Available</span>
                             </div>
                         </div>
                         <div class="demo-footer-strip">
-                            <span>AI Estimate • Property Analysis</span>
+                            <span data-i18n="demo_footer">AI Estimate • Property Analysis</span>
                         </div>
                     </div>
                 </div>
@@ -119,20 +136,20 @@
             <!-- Hero Statistics Row -->
             <div class="stats-row">
                 <div class="stat-card">
-                    <span class="stat-num">3+</span>
-                    <span class="stat-desc">Regression Models</span>
+                    <span class="stat-num" data-i18n="stat_models_num">3+</span>
+                    <span class="stat-desc" data-i18n="stat_models_label">Regression Models</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-num">13+</span>
-                    <span class="stat-desc">Property Factors</span>
+                    <span class="stat-num" data-i18n="stat_factors_num">13+</span>
+                    <span class="stat-desc" data-i18n="stat_factors_label">Property Factors</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-num">3000+</span>
-                    <span class="stat-desc">Training Records</span>
+                    <span class="stat-num" data-i18n="stat_records_num">3000+</span>
+                    <span class="stat-desc" data-i18n="stat_records_label">Training Records</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-num">Real-Time</span>
-                    <span class="stat-desc">Prediction</span>
+                    <span class="stat-num" data-i18n="stat_speed_num">Real-Time</span>
+                    <span class="stat-desc" data-i18n="stat_speed_label">Prediction</span>
                 </div>
             </div>
         </section>
@@ -140,9 +157,9 @@
         <!-- 2. WHY RENTAL PRICE PREDICTION SECTION -->
         <section class="content-section" id="why-prediction">
             <div class="section-heading">
-                <span class="section-tag">VALUATION INTELLIGENCE</span>
-                <h2>Smarter Rental Decisions Across Regions</h2>
-                <p class="section-lead">
+                <span class="section-tag" data-i18n="why_tag">VALUATION INTELLIGENCE</span>
+                <h2 data-i18n="why_title">Smarter Rental Decisions Across Regions</h2>
+                <p class="section-lead" data-i18n="why_lead">
                     Rental prices vary significantly between urban city cores, suburban townships, and rural areas. Our machine learning model accounts for geographical classification alongside physical property traits.
                 </p>
             </div>
@@ -156,8 +173,8 @@
                             <line x1="9" y1="21" x2="9" y2="9"/>
                         </svg>
                     </div>
-                    <h3>Property Intelligence</h3>
-                    <p>Analyze size, rooms, furnishing and property characteristics in comprehensive relation to each other.</p>
+                    <h3 data-i18n="feat_1_title">Property Intelligence</h3>
+                    <p data-i18n="feat_1_desc">Analyze size, rooms, furnishing and property characteristics in comprehensive relation to each other.</p>
                 </div>
 
                 <div class="feature-card">
@@ -167,8 +184,8 @@
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <h3>Urban vs. Rural Pricing</h3>
-                    <p>Accounts for location density, distinguish city cores, suburban developments, and rural village settings.</p>
+                    <h3 data-i18n="feat_2_title">Urban vs. Rural Pricing</h3>
+                    <p data-i18n="feat_2_desc">Accounts for location density, distinguishing city cores, suburban developments, and rural village settings.</p>
                 </div>
 
                 <div class="feature-card">
@@ -177,8 +194,8 @@
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                         </svg>
                     </div>
-                    <h3>Data-Driven Prediction</h3>
-                    <p>Compare multiple regression models and automatically select the strongest model via R² validation.</p>
+                    <h3 data-i18n="feat_3_title">Data-Driven Prediction</h3>
+                    <p data-i18n="feat_3_desc">Compare multiple regression models and automatically select the strongest model via R² validation.</p>
                 </div>
             </div>
         </section>
@@ -186,30 +203,30 @@
         <!-- 3. HOW IT WORKS SECTION -->
         <section class="content-section" id="how-it-works">
             <div class="section-heading">
-                <span class="section-tag">PROCESS WORKFLOW</span>
-                <h2>How Rental Price Prediction Works</h2>
+                <span class="section-tag" data-i18n="how_tag">PROCESS WORKFLOW</span>
+                <h2 data-i18n="how_title">How Rental Price Prediction Works</h2>
             </div>
 
             <div class="steps-flow">
                 <div class="step-box">
                     <span class="step-num">01</span>
-                    <h3>Property Details</h3>
-                    <p>Enter location, urban/rural classification, and property characteristics.</p>
+                    <h3 data-i18n="step_1_title">Property Details</h3>
+                    <p data-i18n="step_1_desc">Enter location, urban/rural classification, and property characteristics.</p>
                 </div>
                 <div class="step-box">
                     <span class="step-num">02</span>
-                    <h3>Data Processing</h3>
-                    <p>The application validates and transforms the property information.</p>
+                    <h3 data-i18n="step_2_title">Data Processing</h3>
+                    <p data-i18n="step_2_desc">The application validates and transforms the property information.</p>
                 </div>
                 <div class="step-box">
                     <span class="step-num">03</span>
-                    <h3>Regression Model</h3>
-                    <p>The trained ML pipeline analyzes the property features.</p>
+                    <h3 data-i18n="step_3_title">Regression Model</h3>
+                    <p data-i18n="step_3_desc">The trained ML pipeline analyzes the property features.</p>
                 </div>
                 <div class="step-box">
                     <span class="step-num">04</span>
-                    <h3>Rental Estimate</h3>
-                    <p>Receive an estimated monthly rent and indicative range.</p>
+                    <h3 data-i18n="step_4_title">Rental Estimate</h3>
+                    <p data-i18n="step_4_desc">Receive an estimated monthly rent and indicative range.</p>
                 </div>
             </div>
         </section>
@@ -217,33 +234,33 @@
         <!-- 4. ML MODELS SECTION -->
         <section class="content-section" id="models">
             <div class="section-heading">
-                <span class="section-tag">ENGINEERING PIPELINE</span>
-                <h2>Built With Regression Models</h2>
-                <p class="section-lead">
+                <span class="section-tag" data-i18n="model_tag">ENGINEERING PIPELINE</span>
+                <h2 data-i18n="model_title">Built With Regression Models</h2>
+                <p class="section-lead" data-i18n="model_lead">
                     Multiple regression algorithms are trained and compared using Scikit-Learn pipelines to identify the highest performing estimator.
                 </p>
             </div>
 
             <div class="card-grid grid-3">
                 <div class="model-box">
-                    <span class="model-tag">BASELINE</span>
-                    <h3>Linear Regression</h3>
-                    <p class="model-category">Baseline</p>
-                    <p class="model-desc">Establishes foundational linear relationships between property dimensions and rental rates.</p>
+                    <span class="model-tag" data-i18n="m1_tag">BASELINE</span>
+                    <h3 data-i18n="m1_title">Linear Regression</h3>
+                    <p class="model-category" data-i18n="m1_cat">Baseline</p>
+                    <p class="model-desc" data-i18n="m1_desc">Establishes foundational linear relationships between property dimensions and rental rates.</p>
                 </div>
 
                 <div class="model-box model-highlight">
-                    <span class="model-tag highlight-tag">ENSEMBLE</span>
-                    <h3>Random Forest</h3>
-                    <p class="model-category">Ensemble</p>
-                    <p class="model-desc">Aggregates decision trees to capture non-linear interactions across features and floor plans.</p>
+                    <span class="model-tag highlight-tag" data-i18n="m2_tag">ENSEMBLE</span>
+                    <h3 data-i18n="m2_title">Random Forest</h3>
+                    <p class="model-category" data-i18n="m2_cat">Ensemble</p>
+                    <p class="model-desc" data-i18n="m2_desc">Aggregates decision trees to capture non-linear interactions across features and floor plans.</p>
                 </div>
 
                 <div class="model-box">
-                    <span class="model-tag">ENSEMBLE</span>
-                    <h3>Extra Trees</h3>
-                    <p class="model-category">Ensemble</p>
-                    <p class="model-desc">Randomized tree ensemble minimizing variance across regional location and area type categories.</p>
+                    <span class="model-tag" data-i18n="m3_tag">ENSEMBLE</span>
+                    <h3 data-i18n="m3_title">Extra Trees</h3>
+                    <p class="model-category" data-i18n="m3_cat">Ensemble</p>
+                    <p class="model-desc" data-i18n="m3_desc">Randomized tree ensemble minimizing variance across regional location and area type categories.</p>
                 </div>
             </div>
 
@@ -254,8 +271,8 @@
                     </svg>
                 </div>
                 <div class="banner-text">
-                    <strong>Best Model Selection:</strong>
-                    <span>Automatically selected using validation performance during execution of <code>train_model.py</code>.</span>
+                    <strong data-i18n="best_model_label">Best Model Selection:</strong>
+                    <span data-i18n="best_model_desc">Automatically selected using validation performance during execution of train_model.py.</span>
                 </div>
             </div>
         </section>
@@ -263,53 +280,53 @@
         <!-- 5. PROPERTY FACTORS SECTION -->
         <section class="content-section" id="factors">
             <div class="section-heading">
-                <span class="section-tag">FEATURE ATTRIBUTES</span>
-                <h2>What Influences the Estimate?</h2>
-                <p class="section-lead">
+                <span class="section-tag" data-i18n="factors_tag">FEATURE ATTRIBUTES</span>
+                <h2 data-i18n="factors_title">What Influences the Estimate?</h2>
+                <p class="section-lead" data-i18n="factors_lead">
                     Key property attributes and environmental characteristics influencing monthly rental values.
                 </p>
             </div>
 
             <div class="card-grid factors-grid">
                 <div class="factor-item">
-                    <h4>Location</h4>
-                    <p>Major urban centres and districts across Maharashtra and top Indian metros.</p>
+                    <h4 data-i18n="f1_title">Location</h4>
+                    <p data-i18n="f1_desc">Major urban centres and districts across Maharashtra and top Indian metros.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Area Type</h4>
-                    <p>Urban city core, suburban townships, or rural village classifications.</p>
+                    <h4 data-i18n="f2_title">Area Type</h4>
+                    <p data-i18n="f2_desc">Urban city core, suburban townships, or rural village classifications.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Property Type</h4>
-                    <p>Villas, standalone houses, studio apartments, and 1 RK units.</p>
+                    <h4 data-i18n="f3_title">Property Type</h4>
+                    <p data-i18n="f3_desc">Villas, standalone houses, studio apartments, and 1 RK units.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Bedrooms</h4>
-                    <p>Accommodates larger families or co-living tenants, directly scaling space utility.</p>
+                    <h4 data-i18n="f4_title">Bedrooms</h4>
+                    <p data-i18n="f4_desc">Accommodates larger families or co-living tenants, directly scaling space utility.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Bathrooms</h4>
-                    <p>En-suite and dedicated bathroom ratios influence tenant convenience.</p>
+                    <h4 data-i18n="f5_title">Bathrooms</h4>
+                    <p data-i18n="f5_desc">En-suite and dedicated bathroom ratios influence tenant convenience.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Area</h4>
-                    <p>Larger usable area generally increases rental value.</p>
+                    <h4 data-i18n="f6_title">Area</h4>
+                    <p data-i18n="f6_desc">Larger usable area generally increases rental value.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Furnishing</h4>
-                    <p>Fully furnished units offer immediate move-in premiums over unfurnished homes.</p>
+                    <h4 data-i18n="f7_title">Furnishing</h4>
+                    <p data-i18n="f7_desc">Fully furnished units offer immediate move-in premiums over unfurnished homes.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Property Age</h4>
-                    <p>Brand-new residential constructions generally command premium rental rates.</p>
+                    <h4 data-i18n="f8_title">Property Age</h4>
+                    <p data-i18n="f8_desc">Brand-new residential constructions generally command premium rental rates.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Floor</h4>
-                    <p>Middle and high-rise floors often carry views and natural ventilation appeal.</p>
+                    <h4 data-i18n="f9_title">Floor</h4>
+                    <p data-i18n="f9_desc">Middle and high-rise floors often carry views and natural ventilation appeal.</p>
                 </div>
                 <div class="factor-item">
-                    <h4>Amenities</h4>
-                    <p>Access to lifts, backup power, 24/7 security, gym, and swimming pools.</p>
+                    <h4 data-i18n="f10_title">Amenities</h4>
+                    <p data-i18n="f10_desc">Access to lifts, backup power, 24/7 security, gym, and swimming pools.</p>
                 </div>
             </div>
         </section>
@@ -317,22 +334,22 @@
         <!-- 6. INSIGHTS SECTION -->
         <section class="content-section" id="insights">
             <div class="section-heading">
-                <span class="section-tag">ANALYTICAL OUTPUT</span>
-                <h2>Turn Data Into Property Insights</h2>
+                <span class="section-tag" data-i18n="insights_tag">ANALYTICAL OUTPUT</span>
+                <h2 data-i18n="insights_title">Turn Data Into Property Insights</h2>
             </div>
 
             <div class="card-grid grid-3">
                 <div class="insight-box">
-                    <h3>Rental Price Estimation</h3>
-                    <p>Calculates the expected monthly rental price using a trained multi-variable regression pipeline.</p>
+                    <h3 data-i18n="ins_1_title">Rental Price Estimation</h3>
+                    <p data-i18n="ins_1_desc">Calculates the expected monthly rental price using a trained multi-variable regression pipeline.</p>
                 </div>
                 <div class="insight-box">
-                    <h3>Indicative Estimate Range</h3>
-                    <p>Provides a contextual boundary window representing local negotiation and seasonal market variance.</p>
+                    <h3 data-i18n="ins_2_title">Indicative Estimate Range</h3>
+                    <p data-i18n="ins_2_desc">Provides a contextual boundary window representing local negotiation and seasonal market variance.</p>
                 </div>
                 <div class="insight-box">
-                    <h3>Property Breakdown</h3>
-                    <p>Visualizes key property attributes relative to typical rental market benchmarks.</p>
+                    <h3 data-i18n="ins_3_title">Property Breakdown</h3>
+                    <p data-i18n="ins_3_desc">Visualizes key property attributes relative to typical rental market benchmarks.</p>
                 </div>
             </div>
         </section>
@@ -340,10 +357,10 @@
         <!-- 7. PREDICTION CTA -->
         <section class="cta-banner-wrapper">
             <div class="cta-card">
-                <h2>Ready to Estimate Your Rental Price?</h2>
-                <p>Enter your property details and get an AI-powered rental estimate in seconds.</p>
+                <h2 data-i18n="cta_title">Ready to Estimate Your Rental Price?</h2>
+                <p data-i18n="cta_desc">Enter your property details and get an AI-powered rental estimate in seconds.</p>
                 <a href="#prediction" class="btn btn-primary btn-large">
-                    <span>Start Prediction</span>
+                    <span data-i18n="cta_btn">Start Prediction</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -355,9 +372,9 @@
         <!-- 8. PREDICTION FORM & RESULT SECTION -->
         <section class="content-section prediction-wrapper" id="prediction">
             <div class="section-heading">
-                <span class="section-tag">LIVE REGRESSION PREDICTION</span>
-                <h2>Rental Price Prediction</h2>
-                <p class="section-lead">
+                <span class="section-tag" data-i18n="pred_tag">LIVE REGRESSION PREDICTION</span>
+                <h2 data-i18n="pred_title">Rental Price Prediction</h2>
+                <p class="section-lead" data-i18n="pred_lead">
                     Enter the property details below to estimate its monthly rental value.
                 </p>
             </div>
@@ -373,14 +390,14 @@
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                                     <polyline points="9 22 9 12 15 12 15 22"/>
                                 </svg>
-                                Property & Location Details
+                                <span data-i18n="block_1_title">Property & Location Details</span>
                             </h3>
 
                             <div class="fields-stack">
                                 <div class="form-field">
-                                    <label for="location">Location (City / District)</label>
+                                    <label for="location" data-i18n="lbl_location">Location (City / District)</label>
                                     <select id="location" name="location" required>
-                                        <option value="" disabled selected>Select City/District</option>
+                                        <option value="" disabled selected data-i18n="opt_select_city">Select City/District</option>
                                         <optgroup label="Maharashtra Cities & Districts">
                                             <option value="Mumbai">Mumbai</option>
                                             <option value="Pune">Pune</option>
@@ -411,28 +428,28 @@
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="locality_type">Locality Area Type</label>
+                                    <label for="locality_type" data-i18n="lbl_locality_type">Locality Area Type</label>
                                     <select id="locality_type" name="locality_type" required>
-                                        <option value="Urban" selected>Urban (City Core / Commercial Hub)</option>
-                                        <option value="Suburban">Suburban (Outskirts / Town)</option>
-                                        <option value="Rural">Rural (Village / Gram Panchayat)</option>
+                                        <option value="Urban" selected data-i18n="opt_urban">Urban (City Core / Commercial Hub)</option>
+                                        <option value="Suburban" data-i18n="opt_suburban">Suburban (Outskirts / Town)</option>
+                                        <option value="Rural" data-i18n="opt_rural">Rural (Village / Gram Panchayat)</option>
                                     </select>
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="property_type">Property Type</label>
+                                    <label for="property_type" data-i18n="lbl_property_type">Property Type</label>
                                     <select id="property_type" name="property_type" required>
-                                        <option value="Apartment" selected>Apartment</option>
-                                        <option value="Independent House">Independent House</option>
-                                        <option value="Villa">Villa</option>
-                                        <option value="Studio">Studio</option>
-                                        <option value="1 RK">1 RK</option>
+                                        <option value="Apartment" selected data-i18n="opt_apartment">Apartment</option>
+                                        <option value="Independent House" data-i18n="opt_house">Independent House</option>
+                                        <option value="Villa" data-i18n="opt_villa">Villa</option>
+                                        <option value="Studio" data-i18n="opt_studio">Studio</option>
+                                        <option value="1 RK" data-i18n="opt_1rk">1 RK</option>
                                     </select>
                                 </div>
 
                                 <div class="form-row-2">
                                     <div class="form-field">
-                                        <label for="bedrooms">Bedrooms (BHK)</label>
+                                        <label for="bedrooms" data-i18n="lbl_bedrooms">Bedrooms (BHK)</label>
                                         <select id="bedrooms" name="bedrooms" required>
                                             <option value="1">1 BHK</option>
                                             <option value="2" selected>2 BHK</option>
@@ -442,7 +459,7 @@
                                         </select>
                                     </div>
                                     <div class="form-field">
-                                        <label for="bathrooms">Bathrooms</label>
+                                        <label for="bathrooms" data-i18n="lbl_bathrooms">Bathrooms</label>
                                         <select id="bathrooms" name="bathrooms" required>
                                             <option value="1">1</option>
                                             <option value="2" selected>2</option>
@@ -454,7 +471,7 @@
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="area_sqft">Area (sq ft) <span class="field-hint">Range: 200–10,000</span></label>
+                                    <label for="area_sqft"><span data-i18n="lbl_area">Area (sq ft)</span> <span class="field-hint">Range: 200–10,000</span></label>
                                     <input type="number" id="area_sqft" name="area_sqft" min="200" max="10000" step="25" placeholder="e.g. 950" required>
                                 </div>
                             </div>
@@ -467,40 +484,40 @@
                                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                                     <polyline points="14 2 14 8 20 8"/>
                                 </svg>
-                                Property Condition & Floors
+                                <span data-i18n="block_2_title">Property Condition & Floors</span>
                             </h3>
 
                             <div class="fields-stack">
                                 <div class="form-field">
-                                    <label for="furnishing">Furnishing Status</label>
+                                    <label for="furnishing" data-i18n="lbl_furnishing">Furnishing Status</label>
                                     <select id="furnishing" name="furnishing" required>
-                                        <option value="Unfurnished">Unfurnished</option>
-                                        <option value="Semi-Furnished" selected>Semi-Furnished</option>
-                                        <option value="Fully Furnished">Fully Furnished</option>
+                                        <option value="Unfurnished" data-i18n="opt_unfurnished">Unfurnished</option>
+                                        <option value="Semi-Furnished" selected data-i18n="opt_semi_furnished">Semi-Furnished</option>
+                                        <option value="Fully Furnished" data-i18n="opt_fully_furnished">Fully Furnished</option>
                                     </select>
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="property_age">Property Age (years) <span class="field-hint">0–100 years</span></label>
+                                    <label for="property_age"><span data-i18n="lbl_property_age">Property Age (years)</span> <span class="field-hint">0–100 years</span></label>
                                     <input type="number" id="property_age" name="property_age" min="0" max="100" step="1" placeholder="e.g. 5" value="5" required>
                                 </div>
 
                                 <div class="form-row-2">
                                     <div class="form-field">
-                                        <label for="floor_number">Floor Number <span class="field-hint">0–100</span></label>
+                                        <label for="floor_number"><span data-i18n="lbl_floor_number">Floor Number</span> <span class="field-hint">0–100</span></label>
                                         <input type="number" id="floor_number" name="floor_number" min="0" max="100" step="1" placeholder="e.g. 4" value="4" required>
                                     </div>
                                     <div class="form-field">
-                                        <label for="total_floors">Total Floors <span class="field-hint">1–100</span></label>
+                                        <label for="total_floors"><span data-i18n="lbl_total_floors">Total Floors</span> <span class="field-hint">1–100</span></label>
                                         <input type="number" id="total_floors" name="total_floors" min="1" max="100" step="1" placeholder="e.g. 12" value="12" required>
                                     </div>
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="parking">Parking Space</label>
+                                    <label for="parking" data-i18n="lbl_parking">Parking Space</label>
                                     <select id="parking" name="parking" required>
-                                        <option value="1" selected>Yes (Dedicated Parking)</option>
-                                        <option value="0">No Parking</option>
+                                        <option value="1" selected data-i18n="opt_parking_yes">Yes (Dedicated Parking)</option>
+                                        <option value="0" data-i18n="opt_parking_no">No Parking</option>
                                     </select>
                                 </div>
                             </div>
@@ -512,45 +529,45 @@
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <polyline points="20 6 9 17 4 12"/>
                                 </svg>
-                                Features & Amenities
+                                <span data-i18n="block_3_title">Features & Amenities</span>
                             </h3>
-                            <p class="amenities-subtext">Select all amenities available at the property:</p>
+                            <p class="amenities-subtext" data-i18n="amenities_subtext">Select all amenities available at the property:</p>
 
                             <div class="amenities-checkbox-grid">
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Lift" checked>
                                     <span class="custom-checkbox"></span>
-                                    <span>Lift</span>
+                                    <span data-i18n="amenity_lift">Lift</span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Security" checked>
                                     <span class="custom-checkbox"></span>
-                                    <span>Security</span>
+                                    <span data-i18n="amenity_security">Security</span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Gym">
                                     <span class="custom-checkbox"></span>
-                                    <span>Gym</span>
+                                    <span data-i18n="amenity_gym">Gym</span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Swimming Pool">
                                     <span class="custom-checkbox"></span>
-                                    <span>Swimming Pool</span>
+                                    <span data-i18n="amenity_pool">Swimming Pool</span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Power Backup" checked>
                                     <span class="custom-checkbox"></span>
-                                    <span>Power Backup</span>
+                                    <span data-i18n="amenity_power">Power Backup</span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Garden">
                                     <span class="custom-checkbox"></span>
-                                    <span>Garden</span>
+                                    <span data-i18n="amenity_garden">Garden</span>
                                 </label>
                                 <label class="checkbox-label">
                                     <input type="checkbox" name="amenity" value="Gas Pipeline">
                                     <span class="custom-checkbox"></span>
-                                    <span>Gas Pipeline</span>
+                                    <span data-i18n="amenity_gas">Gas Pipeline</span>
                                 </label>
                             </div>
                         </div>
@@ -563,7 +580,7 @@
                     <!-- Submit Button -->
                     <div class="form-submit-row">
                         <button type="submit" id="predict-btn" class="btn btn-primary btn-submit">
-                            <span class="btn-text">Estimate Rental Price →</span>
+                            <span class="btn-text" data-i18n="btn_submit_text">Estimate Rental Price →</span>
                             <span class="spinner hidden" id="btn-spinner"></span>
                         </button>
                     </div>
@@ -574,56 +591,56 @@
             <div id="result-card" class="result-card-wrapper hidden">
                 <div class="result-card">
                     <div class="result-top-badge">
-                        <span>YOUR ESTIMATED MONTHLY RENT</span>
+                        <span data-i18n="res_badge">YOUR ESTIMATED MONTHLY RENT</span>
                     </div>
 
                     <div class="result-price-box">
                         <div class="result-main-price" id="prediction-val">₹24,500</div>
-                        <div class="result-period">per month</div>
+                        <div class="result-period" data-i18n="res_per_month">per month</div>
                         
                         <div class="indicative-range-pill">
-                            <span class="range-title">Indicative Estimate Range:</span>
+                            <span class="range-title" data-i18n="res_range_title">Indicative Estimate Range:</span>
                             <strong id="indicative-range-val">₹21,500 – ₹27,500</strong>
                         </div>
-                        <p class="range-disclaimer-note">
+                        <p class="range-disclaimer-note" data-i18n="res_range_disclaimer">
                             Based on the property information provided. This range is an indicative estimate, not a statistical confidence interval.
                         </p>
                     </div>
 
                     <!-- Property Summary -->
                     <div class="result-section-box">
-                        <h4>Property Summary</h4>
+                        <h4 data-i18n="res_summary_title">Property Summary</h4>
                         <div class="summary-grid" id="property-summary-container">
                             <div class="summary-chip">
-                                <span class="chip-k">Location:</span>
+                                <span class="chip-k" data-i18n="chip_loc">Location:</span>
                                 <span class="chip-v" id="sum-location">Pune</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Area Type:</span>
+                                <span class="chip-k" data-i18n="chip_locality">Area Type:</span>
                                 <span class="chip-v" id="sum-locality-type">Urban</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Type:</span>
+                                <span class="chip-k" data-i18n="chip_type">Type:</span>
                                 <span class="chip-v" id="sum-type">Apartment</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Bedrooms:</span>
+                                <span class="chip-k" data-i18n="chip_bhk">Bedrooms:</span>
                                 <span class="chip-v" id="sum-bhk">2 BHK</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Bathrooms:</span>
+                                <span class="chip-k" data-i18n="chip_baths">Bathrooms:</span>
                                 <span class="chip-v" id="sum-baths">2</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Area:</span>
+                                <span class="chip-k" data-i18n="chip_area">Area:</span>
                                 <span class="chip-v" id="sum-area">950 sq ft</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Furnishing:</span>
+                                <span class="chip-k" data-i18n="chip_furn">Furnishing:</span>
                                 <span class="chip-v" id="sum-furn">Semi-Furnished</span>
                             </div>
                             <div class="summary-chip">
-                                <span class="chip-k">Amenities:</span>
+                                <span class="chip-k" data-i18n="chip_amenities">Amenities:</span>
                                 <span class="chip-v" id="sum-amenities">3</span>
                             </div>
                         </div>
@@ -631,11 +648,11 @@
 
                     <!-- Rent Analysis Visual Indicators -->
                     <div class="result-section-box">
-                        <h4>Rent Analysis</h4>
+                        <h4 data-i18n="res_analysis_title">Rent Analysis</h4>
                         <div class="analysis-bars-stack">
                             <div class="analysis-bar-item">
                                 <div class="bar-meta">
-                                    <span>Property Size</span>
+                                    <span data-i18n="analysis_size_label">Property Size</span>
                                     <span id="analysis-size-text">Standard (950 sq ft)</span>
                                 </div>
                                 <div class="meter-track">
@@ -644,7 +661,7 @@
                             </div>
                             <div class="analysis-bar-item">
                                 <div class="bar-meta">
-                                    <span>Amenities Profile</span>
+                                    <span data-i18n="analysis_amenities_label">Amenities Profile</span>
                                     <span id="analysis-amenities-text">Moderate (3/7)</span>
                                 </div>
                                 <div class="meter-track">
@@ -653,7 +670,7 @@
                             </div>
                             <div class="analysis-bar-item">
                                 <div class="bar-meta">
-                                    <span>Property Condition</span>
+                                    <span data-i18n="analysis_condition_label">Property Condition</span>
                                     <span id="analysis-condition-text">Good (5 yrs old)</span>
                                 </div>
                                 <div class="meter-track">
@@ -665,9 +682,9 @@
 
                     <!-- Official Disclaimers -->
                     <div class="result-disclaimer-box">
-                        <p><strong>Important:</strong> This is a machine learning estimate and not an official market valuation.</p>
-                        <p class="disclaimer-full">
-                            <strong>Disclaimer:</strong> The rental price shown is an ML-generated estimate based on the available training data and submitted property characteristics. It is not a certified property valuation or guaranteed market price. Actual rental prices may vary based on locality, demand, property condition, negotiation and market conditions.
+                        <p><strong data-i18n="disclaimer_important">Important:</strong> <span data-i18n="disclaimer_notice">This is a machine learning estimate and not an official market valuation.</span></p>
+                        <p class="disclaimer-full" data-i18n="disclaimer_full">
+                            The rental price shown is an ML-generated estimate based on the available training data and submitted property characteristics. It is not a certified property valuation or guaranteed market price. Actual rental prices may vary based on locality, demand, property condition, negotiation and market conditions.
                         </p>
                     </div>
                 </div>
@@ -681,10 +698,10 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <span class="footer-title">RentalPrice AI</span>
-                <span class="footer-sub">Machine Learning • Flask • Scikit-Learn</span>
+                <span class="footer-sub" data-i18n="footer_brand_sub">Machine Learning • Flask • Scikit-Learn</span>
             </div>
-            <p class="footer-mission">Data-driven rental property intelligence for Maharashtra urban and rural regions.</p>
-            <div class="footer-copy">© 2026 RentalPrice AI. All rights reserved.</div>
+            <p class="footer-mission" data-i18n="footer_mission">Data-driven rental property intelligence for Maharashtra urban and rural regions.</p>
+            <div class="footer-copy" data-i18n="footer_copy">© 2026 RentalPrice AI. All rights reserved.</div>
         </div>
     </footer>
 </body>
