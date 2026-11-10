@@ -5,7 +5,8 @@ from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
-MODEL_PATH = "model.pkl"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 
 def get_performance_category(score):
     if score >= 85.0:
