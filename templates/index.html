@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance AI - Academic Performance Prediction</title>
+    <meta name="description" content="Machine Learning Powered Academic Performance Prediction. Analyze study habits, attendance, and scores to estimate final academic percentage.">
+    <meta property="og:title" content="Student Performance AI">
+    <meta property="og:description" content="Machine Learning Powered Academic Performance Prediction.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <!-- Sticky Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <div class="logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                </div>
+                <span class="logo-text">Student Performance <span class="logo-accent">AI</span></span>
+            </a>
+
+            <!-- Desktop Navigation Menu -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#insights" class="nav-link">Insights</a>
+                <a href="#prediction" class="nav-cta-btn">Start Prediction</a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="landing-page">
+
+        <!-- 1. HERO SECTION -->
+        <section class="hero-section" id="home">
+            <div class="hero-container">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        ML-POWERED ACADEMIC ANALYTICS
+                    </div>
+                    <h1 class="hero-title">
+                        Understand Your Performance.<br>
+                        <span class="text-gradient">Predict Your Potential.</span>
+                    </h1>
+                    <p class="hero-description">
+                        An intelligent machine learning system that analyzes academic and study-related factors to estimate a student's expected final performance.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#prediction" class="btn btn-primary">
+                            <span>Start Prediction</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#how-it-works" class="btn btn-secondary">
+                            Explore How It Works
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Visual (AI Analytics Mockup) -->
+                <div class="hero-visual">
+                    <div class="demo-card-container">
+                        <div class="demo-card-header">
+                            <div class="demo-title-group">
+                                <span class="demo-tag">DEMO PREVIEW</span>
+                                <h3>AI PERFORMANCE ANALYSIS</h3>
+                            </div>
+                            <span class="demo-status">ACTIVE MODEL</span>
+                        </div>
+                        <div class="demo-score-section">
+                            <span class="demo-score-label">Predicted Score</span>
+                            <div class="demo-score-value">78.4%</div>
+                            <div class="demo-progress-bar">
+                                <div class="demo-progress-fill" style="width: 78.4%;"></div>
+                            </div>
+                        </div>
+                        <div class="demo-metrics-list">
+                            <div class="demo-metric-item">
+                                <span class="metric-name">Attendance</span>
+                                <span class="metric-val">88%</span>
+                            </div>
+                            <div class="demo-metric-item">
+                                <span class="metric-name">Study Habits</span>
+                                <span class="metric-val">82%</span>
+                            </div>
+                            <div class="demo-metric-item">
+                                <span class="metric-name">Assessment</span>
+                                <span class="metric-val">76%</span>
+                            </div>
+                        </div>
+                        <div class="demo-footer">
+                            <span class="performance-pill">Performance: VERY GOOD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Statistics Row -->
+            <div class="stats-row">
+                <div class="stat-box">
+                    <span class="stat-number">3+</span>
+                    <span class="stat-label">ML Models Compared</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">9</span>
+                    <span class="stat-label">Performance Factors</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Training Records</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-number">Real-Time</span>
+                    <span class="stat-label">Prediction Engine</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. WHY IT MATTERS SECTION -->
+        <section class="section-container" id="why-it-matters">
+            <div class="section-header">
+                <span class="section-kicker">PROBLEM & PURPOSE</span>
+                <h2 class="section-title">Why Student Performance Prediction?</h2>
+                <p class="section-lead">
+                    Academic performance is influenced by multiple factors such as attendance, study habits, previous academic performance, assessment scores, sleep patterns, and academic workload. This project uses machine learning to identify patterns in these factors and estimate a student's expected final percentage.
+                </p>
+            </div>
+
+            <div class="cards-grid grid-3">
+                <div class="feature-card">
+                    <div class="card-icon blue-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Academic Insights</h3>
+                    <p>Understand how key academic indicators relate directly to overall semester performance.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon indigo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Behavioral Factors</h3>
+                    <p>Analyze study time, class attendance, and lifestyle-related habits to uncover core habits.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon emerald-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3>Actionable Feedback</h3>
+                    <p>Receive personalized suggestions tailored to improve consistency and overall outcomes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. HOW IT WORKS SECTION -->
+        <section class="section-container" id="how-it-works">
+            <div class="section-header">
+                <span class="section-kicker">STEP-BY-STEP PROCESS</span>
+                <h2 class="section-title">How It Works</h2>
+            </div>
+
+            <div class="steps-flow-container">
+                <div class="step-card">
+                    <span class="step-number">01</span>
+                    <h3>Enter Information</h3>
+                    <p>Provide academic, attendance, study and lifestyle information.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">02</span>
+                    <h3>Data Processing</h3>
+                    <p>The application validates and prepares the input for the ML model.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">03</span>
+                    <h3>ML Prediction</h3>
+                    <p>The trained regression model analyzes the input and estimates the final percentage.</p>
+                </div>
+
+                <div class="step-card">
+                    <span class="step-number">04</span>
+                    <h3>Get Insights</h3>
+                    <p>View the predicted performance category and personalized recommendations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. MACHINE LEARNING SECTION -->
+        <section class="section-container" id="ml-models">
+            <div class="section-header">
+                <span class="section-kicker">MODEL ARCHITECTURE</span>
+                <h2 class="section-title">Powered by Machine Learning</h2>
+                <p class="section-lead">
+                    The system evaluates and compares multiple regression algorithms to select the optimal model for final percentage estimation.
+                </p>
+            </div>
+
+            <div class="cards-grid grid-3">
+                <div class="model-card">
+                    <div class="model-badge">BASELINE</div>
+                    <h3>Linear Regression</h3>
+                    <p class="model-type">Baseline Model</p>
+                    <p class="model-desc">Models direct linear relationships between input academic features and student grades.</p>
+                </div>
+
+                <div class="model-card active-model-card">
+                    <div class="model-badge recommended-badge">ENSEMBLE</div>
+                    <h3>Random Forest</h3>
+                    <p class="model-type">Ensemble Model</p>
+                    <p class="model-desc">Combines multiple decision trees to capture non-linear patterns and feature interactions.</p>
+                </div>
+
+                <div class="model-card">
+                    <div class="model-badge">ADVANCED</div>
+                    <h3>Gradient Boosting</h3>
+                    <p class="model-type">Advanced Ensemble Model</p>
+                    <p class="model-desc">Sequential boosting model that minimizes residual error across feature iterations.</p>
+                </div>
+            </div>
+
+            <div class="best-model-banner">
+                <div class="banner-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <div>
+                    <strong>Best Model Selection:</strong>
+                    <span>Automatically selected based on validation performance during model training (`train_model.py`).</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DATA FACTORS SECTION -->
+        <section class="section-container" id="factors">
+            <div class="section-header">
+                <span class="section-kicker">INPUT PARAMETERS</span>
+                <h2 class="section-title">What Does the Model Analyze?</h2>
+                <p class="section-lead">
+                    The ML model evaluates nine distinct academic, attendance, and lifestyle indicators.
+                </p>
+            </div>
+
+            <div class="cards-grid grid-3">
+                <div class="factor-card">
+                    <h4>Study Hours</h4>
+                    <p>Average focused study time per day.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Attendance</h4>
+                    <p>Percentage of classes attended during the semester.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Previous Performance</h4>
+                    <p>Overall academic percentage from the previous semester.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Assignment Score</h4>
+                    <p>Average score across coursework and assignments.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Internal Test Score</h4>
+                    <p>Performance in internal and mid-term assessments.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Sleep Hours</h4>
+                    <p>Daily sleep duration for cognitive recovery and focus.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Extracurricular Activities</h4>
+                    <p>Participation in co-curricular activities.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Internet Access</h4>
+                    <p>Availability of high-speed study resources online.</p>
+                </div>
+                <div class="factor-card">
+                    <h4>Backlogs</h4>
+                    <p>Count of pending or uncleared active backlogs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. INSIGHTS SECTION -->
+        <section class="section-container" id="insights">
+            <div class="section-header">
+                <span class="section-kicker">OUTPUT VALUE</span>
+                <h2 class="section-title">Turn Data Into Academic Insights</h2>
+            </div>
+
+            <div class="cards-grid grid-3">
+                <div class="insight-card">
+                    <h3>Performance Estimation</h3>
+                    <p>Estimate the expected final percentage using mathematical regression modeling.</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Performance Category</h3>
+                    <p>Classify predictions into clear performance tiers (Excellent, Very Good, Good, Average, Needs Improvement).</p>
+                </div>
+
+                <div class="insight-card">
+                    <h3>Personalized Recommendations</h3>
+                    <p>Generate actionable suggestions tailored to student input habits and scores.</p>
+                </div>
+            </div>
+
+            <div class="disclaimer-note">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <span>Note: Predictions are model-based educational estimates designed for self-assessment and academic planning.</span>
+            </div>
+        </section>
+
+        <!-- 7. START PREDICTION CTA BANNER -->
+        <section class="cta-banner-section">
+            <div class="cta-banner-card">
+                <h2>Ready to Analyze Your Performance?</h2>
+                <p>Enter a few academic and study-related details to generate your personalized machine learning prediction.</p>
+                <a href="#prediction" class="btn btn-primary btn-large">
+                    <span>Start Prediction</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- 8. PREDICTION FORM & RESULT SECTION -->
+        <section class="section-container prediction-section" id="prediction">
+            <div class="section-header">
+                <span class="section-kicker">LIVE ML ESTIMATION ENGINE</span>
+                <h2 class="section-title">Student Performance Prediction</h2>
+                <p class="section-lead">
+                    Enter your information below. The trained machine learning model will estimate your expected final percentage.
+                </p>
+            </div>
+
+            <div class="form-container-card">
+                <form id="prediction-form" novalidate>
+                    <div class="form-sections-grid">
+
+                        <!-- Fieldset 1: Academic Information -->
+                        <div class="form-group-card">
+                            <h3 class="group-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                                </svg>
+                                Academic Information
+                            </h3>
+                            <div class="group-fields">
+                                <div class="form-field">
+                                    <label for="previous_percentage">Previous Semester % <span class="range">(0–100%)</span></label>
+                                    <input type="number" id="previous_percentage" name="previous_percentage" min="0" max="100" step="0.5" placeholder="e.g. 75" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="assignment_score">Assignment Score <span class="range">(0–100)</span></label>
+                                    <input type="number" id="assignment_score" name="assignment_score" min="0" max="100" step="0.5" placeholder="e.g. 80" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="internal_score">Internal Test Score <span class="range">(0–100)</span></label>
+                                    <input type="number" id="internal_score" name="internal_score" min="0" max="100" step="0.5" placeholder="e.g. 78" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="backlogs">Number of Backlogs <span class="range">(Min: 0)</span></label>
+                                    <input type="number" id="backlogs" name="backlogs" min="0" step="1" placeholder="e.g. 0" value="0" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fieldset 2: Study & Attendance -->
+                        <div class="form-group-card">
+                            <h3 class="group-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                Study & Attendance
+                            </h3>
+                            <div class="group-fields">
+                                <div class="form-field">
+                                    <label for="study_hours">Study Hours Per Day <span class="range">(0–24 hrs)</span></label>
+                                    <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.5" placeholder="e.g. 5.5" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="attendance">Attendance Percentage <span class="range">(0–100%)</span></label>
+                                    <input type="number" id="attendance" name="attendance" min="0" max="100" step="0.5" placeholder="e.g. 85" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Fieldset 3: Lifestyle & Support -->
+                        <div class="form-group-card full-width-group">
+                            <h3 class="group-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                                </svg>
+                                Lifestyle & Support
+                            </h3>
+                            <div class="group-fields grid-3-fields">
+                                <div class="form-field">
+                                    <label for="sleep_hours">Sleep Hours <span class="range">(0–24 hrs)</span></label>
+                                    <input type="number" id="sleep_hours" name="sleep_hours" min="0" max="24" step="0.5" placeholder="e.g. 7" required>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="extracurricular">Extracurricular Activities</label>
+                                    <select id="extracurricular" name="extracurricular" required>
+                                        <option value="1">Yes</option>
+                                        <option value="0" selected>No</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="internet_access">Internet Access</label>
+                                    <select id="internet_access" name="internet_access" required>
+                                        <option value="1" selected>Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Error Alert Area -->
+                    <div id="error-message" class="error-alert hidden" role="alert"></div>
+
+                    <!-- Predict Button -->
+                    <div class="form-submit-container">
+                        <button type="submit" id="predict-btn" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Predict My Performance →</span>
+                            <span class="spinner hidden" id="btn-spinner"></span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- RESULT CARD -->
+            <div id="result-card" class="result-card-container hidden">
+                <div class="result-card-inner">
+                    <div class="result-top-bar">
+                        <span class="result-kicker">YOUR PREDICTED PERFORMANCE</span>
+                        <span class="result-badge" id="category-badge">VERY GOOD</span>
+                    </div>
+
+                    <div class="result-main-score">
+                        <div class="score-display" id="prediction-val">78.42%</div>
+                        <div class="score-progress-track">
+                            <div class="score-progress-fill" id="result-progress-bar" style="width: 0%;"></div>
+                        </div>
+                        <p class="score-explanation">
+                            Based on the information provided, the model estimates your expected final academic percentage.
+                        </p>
+                    </div>
+
+                    <!-- Performance Analysis Progress Indicators -->
+                    <div class="result-breakdown-section">
+                        <h4>Performance Analysis</h4>
+                        <div class="breakdown-grid">
+                            <div class="breakdown-item">
+                                <div class="breakdown-meta">
+                                    <span>Attendance</span>
+                                    <span id="breakdown-attendance-val">0%</span>
+                                </div>
+                                <div class="breakdown-track">
+                                    <div class="breakdown-fill" id="breakdown-attendance-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-meta">
+                                    <span>Previous Performance</span>
+                                    <span id="breakdown-previous-val">0%</span>
+                                </div>
+                                <div class="breakdown-track">
+                                    <div class="breakdown-fill" id="breakdown-previous-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-meta">
+                                    <span>Assignment Score</span>
+                                    <span id="breakdown-assignment-val">0%</span>
+                                </div>
+                                <div class="breakdown-track">
+                                    <div class="breakdown-fill" id="breakdown-assignment-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-meta">
+                                    <span>Internal Score</span>
+                                    <span id="breakdown-internal-val">0%</span>
+                                </div>
+                                <div class="breakdown-track">
+                                    <div class="breakdown-fill" id="breakdown-internal-bar"></div>
+                                </div>
+                            </div>
+
+                            <div class="breakdown-item">
+                                <div class="breakdown-meta">
+                                    <span>Study Hours</span>
+                                    <span id="breakdown-study-val">0 hrs</span>
+                                </div>
+                                <div class="breakdown-track">
+                                    <div class="breakdown-fill" id="breakdown-study-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personalized Recommendations -->
+                    <div class="result-recommendation-section">
+                        <h4>Personalized Recommendations</h4>
+                        <p id="recommendation-text">Maintain consistent effort in your academic routine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Professional Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">Student Performance AI</span>
+                <span class="footer-tech">Machine Learning • Flask • Scikit-learn</span>
+            </div>
+            <p class="footer-note">Educational project for academic performance analysis.</p>
+            <div class="footer-copyright">© 2026 Student Performance AI</div>
+        </div>
+    </footer>
+</body>
+</html>

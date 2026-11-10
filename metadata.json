@@ -1,0 +1,6 @@
+{
+  "name": "Student Performance Predictor",
+  "description": "Predict academic performance using Machine Learning",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
