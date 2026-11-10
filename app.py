@@ -1,7 +1,27 @@
 import os
+import sys
 import joblib
 import pandas as pd
 from flask import Flask, render_template, request, jsonify
+
+# Handle scikit-learn internal module renaming (_loss vs _gb_losses) across different versions
+try:
+    import sklearn.ensemble._loss
+except ImportError:
+    try:
+        import sklearn.ensemble._gb_losses as _loss
+        sys.modules['sklearn.ensemble._loss'] = _loss
+    except ImportError:
+        pass
+
+try:
+    import sklearn.ensemble._gb_losses
+except ImportError:
+    try:
+        import sklearn.ensemble._loss as _gb_losses
+        sys.modules['sklearn.ensemble._gb_losses'] = _gb_losses
+    except ImportError:
+        pass
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 

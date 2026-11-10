@@ -9,8 +9,7 @@ from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
 
 def train_rental_model():
     print("=" * 50)
@@ -63,11 +62,13 @@ def train_rental_model():
 
     models = {
         "Linear Regression": LinearRegression(),
-        "Random Forest": RandomForestRegressor(n_estimators=120, max_depth=16, random_state=42),
-        "Gradient Boosting": GradientBoostingRegressor(n_estimators=120, learning_rate=0.1, max_depth=5, random_state=42)
+        "Random Forest": RandomForestRegressor(n_estimators=150, max_depth=18, random_state=42),
+        "Extra Trees": ExtraTreesRegressor(n_estimators=150, max_depth=18, random_state=42)
     }
 
     print("Training models...\n")
+
+    from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
     best_score = -float("inf")
     best_model_name = None
