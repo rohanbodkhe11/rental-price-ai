@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Performance AI - Academic Performance Prediction</title>
-    <meta name="description" content="Machine Learning Powered Academic Performance Prediction. Analyze study habits, attendance, and scores to estimate final academic percentage.">
-    <meta property="og:title" content="Student Performance AI">
-    <meta property="og:description" content="Machine Learning Powered Academic Performance Prediction.">
+    <title>RentalPrice AI - Rental House Price Predictor</title>
+    <meta name="description" content="AI-powered residential rental price estimation using Machine Learning regression. Analyze property characteristics, locations, size, and amenities.">
+    <meta property="og:title" content="RentalPrice AI - Rental House Price Predictor">
+    <meta property="og:description" content="AI-powered residential rental price estimation using Machine Learning regression.">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
@@ -14,17 +14,17 @@
     <!-- Sticky Navigation Bar -->
     <header class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <div class="logo-icon">
+            <a href="#home" class="nav-brand">
+                <div class="brand-icon">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                        <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <polyline points="9 22 9 12 15 12 15 22"/>
                     </svg>
                 </div>
-                <span class="logo-text">Student Performance <span class="logo-accent">AI</span></span>
+                <span class="brand-text">RentalPrice <span class="brand-highlight">AI</span></span>
             </a>
 
-            <!-- Desktop Navigation Menu -->
+            <!-- Desktop Nav Menu -->
             <nav class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#how-it-works" class="nav-link">How It Works</a>
@@ -34,35 +34,37 @@
 
             <!-- Mobile Hamburger Toggle -->
             <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
         </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="landing-page">
+    <!-- Main Content Container -->
+    <main class="page-wrapper">
 
         <!-- 1. HERO SECTION -->
         <section class="hero-section" id="home">
-            <div class="hero-container">
-                <!-- Hero Content -->
+            <div class="hero-grid">
+                <!-- Left Hero Content -->
                 <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-dot"></span>
-                        ML-POWERED ACADEMIC ANALYTICS
+                    <div class="hero-pill">
+                        <span class="pulse-indicator"></span>
+                        AI-POWERED REAL ESTATE VALUATION
                     </div>
                     <h1 class="hero-title">
-                        Understand Your Performance.<br>
-                        <span class="text-gradient">Predict Your Potential.</span>
+                        Know the Value of Your Next Rental.
                     </h1>
-                    <p class="hero-description">
-                        An intelligent machine learning system that analyzes academic and study-related factors to estimate a student's expected final performance.
+                    <p class="hero-subtitle">
+                        AI-powered rental price estimation based on property characteristics.
                     </p>
-                    <div class="hero-actions">
+                    <p class="hero-description">
+                        Estimate the monthly rental value of a residential property using machine learning models trained on property characteristics, location, size, furnishing, amenities and other factors.
+                    </p>
+                    <div class="hero-buttons">
                         <a href="#prediction" class="btn btn-primary">
-                            <span>Start Prediction</span>
+                            <span>Estimate Rental Price</span>
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
@@ -74,39 +76,41 @@
                     </div>
                 </div>
 
-                <!-- Hero Visual (AI Analytics Mockup) -->
-                <div class="hero-visual">
-                    <div class="demo-card-container">
-                        <div class="demo-card-header">
-                            <div class="demo-title-group">
-                                <span class="demo-tag">DEMO PREVIEW</span>
-                                <h3>AI PERFORMANCE ANALYSIS</h3>
-                            </div>
-                            <span class="demo-status">ACTIVE MODEL</span>
+                <!-- Right Hero Visual Card (Pure HTML/CSS Mockup) -->
+                <div class="hero-visual-wrapper">
+                    <div class="demo-card">
+                        <div class="demo-card-top">
+                            <span class="demo-badge">DEMO PREVIEW</span>
+                            <span class="demo-status">ACTIVE PIPELINE</span>
                         </div>
-                        <div class="demo-score-section">
-                            <span class="demo-score-label">Predicted Score</span>
-                            <div class="demo-score-value">78.4%</div>
-                            <div class="demo-progress-bar">
-                                <div class="demo-progress-fill" style="width: 78.4%;"></div>
-                            </div>
+                        <div class="demo-property-info">
+                            <span class="demo-kicker">RENTAL ESTIMATE</span>
+                            <h3>2 BHK Apartment</h3>
+                            <p class="demo-loc">Pune, Maharashtra</p>
                         </div>
-                        <div class="demo-metrics-list">
-                            <div class="demo-metric-item">
-                                <span class="metric-name">Attendance</span>
-                                <span class="metric-val">88%</span>
-                            </div>
-                            <div class="demo-metric-item">
-                                <span class="metric-name">Study Habits</span>
-                                <span class="metric-val">82%</span>
-                            </div>
-                            <div class="demo-metric-item">
-                                <span class="metric-name">Assessment</span>
-                                <span class="metric-val">76%</span>
+                        <div class="demo-estimate-box">
+                            <span class="est-label">Estimated Monthly Rent</span>
+                            <div class="est-price">₹24,500 <span class="est-period">/ mo</span></div>
+                            <div class="demo-progress-track">
+                                <div class="demo-progress-fill"></div>
                             </div>
                         </div>
-                        <div class="demo-footer">
-                            <span class="performance-pill">Performance: VERY GOOD</span>
+                        <div class="demo-feature-row">
+                            <div class="demo-spec">
+                                <span class="spec-label">Area</span>
+                                <span class="spec-val">950 sq ft</span>
+                            </div>
+                            <div class="demo-spec">
+                                <span class="spec-label">Furnishing</span>
+                                <span class="spec-val">Semi-Furnished</span>
+                            </div>
+                            <div class="demo-spec">
+                                <span class="spec-label">Parking</span>
+                                <span class="spec-val">Available</span>
+                            </div>
+                        </div>
+                        <div class="demo-footer-strip">
+                            <span>AI Estimate • Property Analysis</span>
                         </div>
                     </div>
                 </div>
@@ -114,239 +118,230 @@
 
             <!-- Hero Statistics Row -->
             <div class="stats-row">
-                <div class="stat-box">
-                    <span class="stat-number">3+</span>
-                    <span class="stat-label">ML Models Compared</span>
+                <div class="stat-card">
+                    <span class="stat-num">3+</span>
+                    <span class="stat-desc">Regression Models</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">9</span>
-                    <span class="stat-label">Performance Factors</span>
+                <div class="stat-card">
+                    <span class="stat-num">12+</span>
+                    <span class="stat-desc">Property Features</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">1000+</span>
-                    <span class="stat-label">Training Records</span>
+                <div class="stat-card">
+                    <span class="stat-num">1500+</span>
+                    <span class="stat-desc">Training Records</span>
                 </div>
-                <div class="stat-box">
-                    <span class="stat-number">Real-Time</span>
-                    <span class="stat-label">Prediction Engine</span>
+                <div class="stat-card">
+                    <span class="stat-num">Real-Time</span>
+                    <span class="stat-desc">Prediction</span>
                 </div>
             </div>
         </section>
 
-        <!-- 2. WHY IT MATTERS SECTION -->
-        <section class="section-container" id="why-it-matters">
-            <div class="section-header">
-                <span class="section-kicker">PROBLEM & PURPOSE</span>
-                <h2 class="section-title">Why Student Performance Prediction?</h2>
+        <!-- 2. WHY RENTAL PRICE PREDICTION SECTION -->
+        <section class="content-section" id="why-prediction">
+            <div class="section-heading">
+                <span class="section-tag">VALUATION INTELLIGENCE</span>
+                <h2>Smarter Rental Decisions</h2>
                 <p class="section-lead">
-                    Academic performance is influenced by multiple factors such as attendance, study habits, previous academic performance, assessment scores, sleep patterns, and academic workload. This project uses machine learning to identify patterns in these factors and estimate a student's expected final percentage.
+                    Rental prices depend on multiple property and location factors. A machine learning model can analyze these relationships and provide a data-driven estimate to support rental decisions.
                 </p>
             </div>
 
-            <div class="cards-grid grid-3">
+            <div class="card-grid grid-3">
                 <div class="feature-card">
-                    <div class="card-icon blue-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                    <div class="card-icon-box icon-indigo">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="3" y1="9" x2="21" y2="9"/>
+                            <line x1="9" y1="21" x2="9" y2="9"/>
                         </svg>
                     </div>
-                    <h3>Academic Insights</h3>
-                    <p>Understand how key academic indicators relate directly to overall semester performance.</p>
+                    <h3>Property Intelligence</h3>
+                    <p>Analyze size, rooms, furnishing and property characteristics in comprehensive relation to each other.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="card-icon indigo-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
+                    <div class="card-icon-box icon-blue">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <h3>Behavioral Factors</h3>
-                    <p>Analyze study time, class attendance, and lifestyle-related habits to uncover core habits.</p>
+                    <h3>Location-Aware Estimation</h3>
+                    <p>Location is one of the important factors affecting rental value, factoring in regional demand indices.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="card-icon emerald-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                    <div class="card-icon-box icon-emerald">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                         </svg>
                     </div>
-                    <h3>Actionable Feedback</h3>
-                    <p>Receive personalized suggestions tailored to improve consistency and overall outcomes.</p>
+                    <h3>Data-Driven Prediction</h3>
+                    <p>Compare multiple regression models and automatically select the strongest model via R² validation.</p>
                 </div>
             </div>
         </section>
 
         <!-- 3. HOW IT WORKS SECTION -->
-        <section class="section-container" id="how-it-works">
-            <div class="section-header">
-                <span class="section-kicker">STEP-BY-STEP PROCESS</span>
-                <h2 class="section-title">How It Works</h2>
+        <section class="content-section" id="how-it-works">
+            <div class="section-heading">
+                <span class="section-tag">PROCESS WORKFLOW</span>
+                <h2>How Rental Price Prediction Works</h2>
             </div>
 
-            <div class="steps-flow-container">
-                <div class="step-card">
-                    <span class="step-number">01</span>
-                    <h3>Enter Information</h3>
-                    <p>Provide academic, attendance, study and lifestyle information.</p>
+            <div class="steps-flow">
+                <div class="step-box">
+                    <span class="step-num">01</span>
+                    <h3>Property Details</h3>
+                    <p>Enter location and property characteristics.</p>
                 </div>
-
-                <div class="step-card">
-                    <span class="step-number">02</span>
+                <div class="step-box">
+                    <span class="step-num">02</span>
                     <h3>Data Processing</h3>
-                    <p>The application validates and prepares the input for the ML model.</p>
+                    <p>The application validates and transforms the property information.</p>
                 </div>
-
-                <div class="step-card">
-                    <span class="step-number">03</span>
-                    <h3>ML Prediction</h3>
-                    <p>The trained regression model analyzes the input and estimates the final percentage.</p>
+                <div class="step-box">
+                    <span class="step-num">03</span>
+                    <h3>Regression Model</h3>
+                    <p>The trained ML pipeline analyzes the property features.</p>
                 </div>
-
-                <div class="step-card">
-                    <span class="step-number">04</span>
-                    <h3>Get Insights</h3>
-                    <p>View the predicted performance category and personalized recommendations.</p>
+                <div class="step-box">
+                    <span class="step-num">04</span>
+                    <h3>Rental Estimate</h3>
+                    <p>Receive an estimated monthly rent and indicative range.</p>
                 </div>
             </div>
         </section>
 
-        <!-- 4. MACHINE LEARNING SECTION -->
-        <section class="section-container" id="ml-models">
-            <div class="section-header">
-                <span class="section-kicker">MODEL ARCHITECTURE</span>
-                <h2 class="section-title">Powered by Machine Learning</h2>
+        <!-- 4. ML MODELS SECTION -->
+        <section class="content-section" id="models">
+            <div class="section-heading">
+                <span class="section-tag">ENGINEERING PIPELINE</span>
+                <h2>Built With Regression Models</h2>
                 <p class="section-lead">
-                    The system evaluates and compares multiple regression algorithms to select the optimal model for final percentage estimation.
+                    Multiple regression algorithms are trained and compared using Scikit-Learn pipelines to identify the highest performing estimator.
                 </p>
             </div>
 
-            <div class="cards-grid grid-3">
-                <div class="model-card">
-                    <div class="model-badge">BASELINE</div>
+            <div class="card-grid grid-3">
+                <div class="model-box">
+                    <span class="model-tag">BASELINE</span>
                     <h3>Linear Regression</h3>
-                    <p class="model-type">Baseline Model</p>
-                    <p class="model-desc">Models direct linear relationships between input academic features and student grades.</p>
+                    <p class="model-category">Baseline</p>
+                    <p class="model-desc">Establishes foundational linear relationships between property dimensions and rental rates.</p>
                 </div>
 
-                <div class="model-card active-model-card">
-                    <div class="model-badge recommended-badge">ENSEMBLE</div>
+                <div class="model-box">
+                    <span class="model-tag">ENSEMBLE</span>
                     <h3>Random Forest</h3>
-                    <p class="model-type">Ensemble Model</p>
-                    <p class="model-desc">Combines multiple decision trees to capture non-linear patterns and feature interactions.</p>
+                    <p class="model-category">Ensemble</p>
+                    <p class="model-desc">Aggregates decision trees to capture non-linear interactions across features and floor plans.</p>
                 </div>
 
-                <div class="model-card">
-                    <div class="model-badge">ADVANCED</div>
+                <div class="model-box model-highlight">
+                    <span class="model-tag highlight-tag">ADVANCED</span>
                     <h3>Gradient Boosting</h3>
-                    <p class="model-type">Advanced Ensemble Model</p>
-                    <p class="model-desc">Sequential boosting model that minimizes residual error across feature iterations.</p>
+                    <p class="model-category">Ensemble</p>
+                    <p class="model-desc">Sequentially refines residual error to minimize variance and yield precise rental valuations.</p>
                 </div>
             </div>
 
             <div class="best-model-banner">
-                <div class="banner-icon">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="banner-icon-circle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                         <polyline points="20 6 9 17 4 12"/>
                     </svg>
                 </div>
-                <div>
+                <div class="banner-text">
                     <strong>Best Model Selection:</strong>
-                    <span>Automatically selected based on validation performance during model training (`train_model.py`).</span>
+                    <span>Automatically selected using validation performance during execution of <code>train_model.py</code>.</span>
                 </div>
             </div>
         </section>
 
-        <!-- 5. DATA FACTORS SECTION -->
-        <section class="section-container" id="factors">
-            <div class="section-header">
-                <span class="section-kicker">INPUT PARAMETERS</span>
-                <h2 class="section-title">What Does the Model Analyze?</h2>
+        <!-- 5. PROPERTY FACTORS SECTION -->
+        <section class="content-section" id="factors">
+            <div class="section-heading">
+                <span class="section-tag">FEATURE ATTRIBUTES</span>
+                <h2>What Influences the Estimate?</h2>
                 <p class="section-lead">
-                    The ML model evaluates nine distinct academic, attendance, and lifestyle indicators.
+                    Key property attributes and environmental characteristics influencing monthly rental values.
                 </p>
             </div>
 
-            <div class="cards-grid grid-3">
-                <div class="factor-card">
-                    <h4>Study Hours</h4>
-                    <p>Average focused study time per day.</p>
+            <div class="card-grid factors-grid">
+                <div class="factor-item">
+                    <h4>Location</h4>
+                    <p>Major urban centres and high-demand metro localities command higher rental benchmarks.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Attendance</h4>
-                    <p>Percentage of classes attended during the semester.</p>
+                <div class="factor-item">
+                    <h4>Property Type</h4>
+                    <p>Villas, standalone houses, and studio apartments exhibit unique rental yield profiles.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Previous Performance</h4>
-                    <p>Overall academic percentage from the previous semester.</p>
+                <div class="factor-item">
+                    <h4>Bedrooms</h4>
+                    <p>Accommodates larger families or co-living tenants, directly scaling space utility.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Assignment Score</h4>
-                    <p>Average score across coursework and assignments.</p>
+                <div class="factor-item">
+                    <h4>Bathrooms</h4>
+                    <p>En-suite and dedicated bathroom ratios influence tenant convenience and rentability.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Internal Test Score</h4>
-                    <p>Performance in internal and mid-term assessments.</p>
+                <div class="factor-item">
+                    <h4>Area</h4>
+                    <p>Larger usable area generally increases rental value.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Sleep Hours</h4>
-                    <p>Daily sleep duration for cognitive recovery and focus.</p>
+                <div class="factor-item">
+                    <h4>Furnishing</h4>
+                    <p>Fully furnished units with appliances and interior fittings offer immediate move-in premiums.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Extracurricular Activities</h4>
-                    <p>Participation in co-curricular activities.</p>
+                <div class="factor-item">
+                    <h4>Property Age</h4>
+                    <p>Brand-new residential constructions generally command premium rental rates over older properties.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Internet Access</h4>
-                    <p>Availability of high-speed study resources online.</p>
+                <div class="factor-item">
+                    <h4>Floor</h4>
+                    <p>Middle and high-rise floors often carry views and natural ventilation appeal in high-density areas.</p>
                 </div>
-                <div class="factor-card">
-                    <h4>Backlogs</h4>
-                    <p>Count of pending or uncleared active backlogs.</p>
+                <div class="factor-item">
+                    <h4>Parking</h4>
+                    <p>Reserved four-wheeler covered parking adds meaningful value in urban apartment complexes.</p>
+                </div>
+                <div class="factor-item">
+                    <h4>Amenities</h4>
+                    <p>Access to lifts, backup power, 24/7 security, gym, and swimming pools enhances tenant demand.</p>
                 </div>
             </div>
         </section>
 
         <!-- 6. INSIGHTS SECTION -->
-        <section class="section-container" id="insights">
-            <div class="section-header">
-                <span class="section-kicker">OUTPUT VALUE</span>
-                <h2 class="section-title">Turn Data Into Academic Insights</h2>
+        <section class="content-section" id="insights">
+            <div class="section-heading">
+                <span class="section-tag">ANALYTICAL OUTPUT</span>
+                <h2>Turn Data Into Property Insights</h2>
             </div>
 
-            <div class="cards-grid grid-3">
-                <div class="insight-card">
-                    <h3>Performance Estimation</h3>
-                    <p>Estimate the expected final percentage using mathematical regression modeling.</p>
+            <div class="card-grid grid-3">
+                <div class="insight-box">
+                    <h3>Rental Price Estimation</h3>
+                    <p>Calculates the expected monthly rental price using a trained multi-variable regression pipeline.</p>
                 </div>
-
-                <div class="insight-card">
-                    <h3>Performance Category</h3>
-                    <p>Classify predictions into clear performance tiers (Excellent, Very Good, Good, Average, Needs Improvement).</p>
+                <div class="insight-box">
+                    <h3>Indicative Estimate Range</h3>
+                    <p>Provides a contextual boundary window representing local negotiation and seasonal market variance.</p>
                 </div>
-
-                <div class="insight-card">
-                    <h3>Personalized Recommendations</h3>
-                    <p>Generate actionable suggestions tailored to student input habits and scores.</p>
+                <div class="insight-box">
+                    <h3>Property Breakdown</h3>
+                    <p>Visualizes key property attributes relative to typical rental market benchmarks.</p>
                 </div>
-            </div>
-
-            <div class="disclaimer-note">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="12" y1="16" x2="12" y2="12"/>
-                    <line x1="12" y1="8" x2="12.01" y2="8"/>
-                </svg>
-                <span>Note: Predictions are model-based educational estimates designed for self-assessment and academic planning.</span>
             </div>
         </section>
 
-        <!-- 7. START PREDICTION CTA BANNER -->
-        <section class="cta-banner-section">
-            <div class="cta-banner-card">
-                <h2>Ready to Analyze Your Performance?</h2>
-                <p>Enter a few academic and study-related details to generate your personalized machine learning prediction.</p>
+        <!-- 7. PREDICTION CTA -->
+        <section class="cta-banner-wrapper">
+            <div class="cta-card">
+                <h2>Ready to Estimate Your Rental Price?</h2>
+                <p>Enter your property details and get an AI-powered rental estimate in seconds.</p>
                 <a href="#prediction" class="btn btn-primary btn-large">
                     <span>Start Prediction</span>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -358,198 +353,297 @@
         </section>
 
         <!-- 8. PREDICTION FORM & RESULT SECTION -->
-        <section class="section-container prediction-section" id="prediction">
-            <div class="section-header">
-                <span class="section-kicker">LIVE ML ESTIMATION ENGINE</span>
-                <h2 class="section-title">Student Performance Prediction</h2>
+        <section class="content-section prediction-wrapper" id="prediction">
+            <div class="section-heading">
+                <span class="section-tag">LIVE REGRESSION PREDICTION</span>
+                <h2>Rental Price Prediction</h2>
                 <p class="section-lead">
-                    Enter your information below. The trained machine learning model will estimate your expected final percentage.
+                    Enter the property details below to estimate its monthly rental value.
                 </p>
             </div>
 
-            <div class="form-container-card">
+            <div class="form-card">
                 <form id="prediction-form" novalidate>
-                    <div class="form-sections-grid">
+                    <div class="form-layout-grid">
 
-                        <!-- Fieldset 1: Academic Information -->
-                        <div class="form-group-card">
-                            <h3 class="group-title">
+                        <!-- Group 1: Property Details -->
+                        <div class="form-group-block">
+                            <h3 class="block-title">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
                                 </svg>
-                                Academic Information
+                                Property Details
                             </h3>
-                            <div class="group-fields">
-                                <div class="form-field">
-                                    <label for="previous_percentage">Previous Semester % <span class="range">(0–100%)</span></label>
-                                    <input type="number" id="previous_percentage" name="previous_percentage" min="0" max="100" step="0.5" placeholder="e.g. 75" required>
-                                </div>
 
+                            <div class="fields-stack">
                                 <div class="form-field">
-                                    <label for="assignment_score">Assignment Score <span class="range">(0–100)</span></label>
-                                    <input type="number" id="assignment_score" name="assignment_score" min="0" max="100" step="0.5" placeholder="e.g. 80" required>
-                                </div>
-
-                                <div class="form-field">
-                                    <label for="internal_score">Internal Test Score <span class="range">(0–100)</span></label>
-                                    <input type="number" id="internal_score" name="internal_score" min="0" max="100" step="0.5" placeholder="e.g. 78" required>
-                                </div>
-
-                                <div class="form-field">
-                                    <label for="backlogs">Number of Backlogs <span class="range">(Min: 0)</span></label>
-                                    <input type="number" id="backlogs" name="backlogs" min="0" step="1" placeholder="e.g. 0" value="0" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Fieldset 2: Study & Attendance -->
-                        <div class="form-group-card">
-                            <h3 class="group-title">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                                Study & Attendance
-                            </h3>
-                            <div class="group-fields">
-                                <div class="form-field">
-                                    <label for="study_hours">Study Hours Per Day <span class="range">(0–24 hrs)</span></label>
-                                    <input type="number" id="study_hours" name="study_hours" min="0" max="24" step="0.5" placeholder="e.g. 5.5" required>
-                                </div>
-
-                                <div class="form-field">
-                                    <label for="attendance">Attendance Percentage <span class="range">(0–100%)</span></label>
-                                    <input type="number" id="attendance" name="attendance" min="0" max="100" step="0.5" placeholder="e.g. 85" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Fieldset 3: Lifestyle & Support -->
-                        <div class="form-group-card full-width-group">
-                            <h3 class="group-title">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                                </svg>
-                                Lifestyle & Support
-                            </h3>
-                            <div class="group-fields grid-3-fields">
-                                <div class="form-field">
-                                    <label for="sleep_hours">Sleep Hours <span class="range">(0–24 hrs)</span></label>
-                                    <input type="number" id="sleep_hours" name="sleep_hours" min="0" max="24" step="0.5" placeholder="e.g. 7" required>
-                                </div>
-
-                                <div class="form-field">
-                                    <label for="extracurricular">Extracurricular Activities</label>
-                                    <select id="extracurricular" name="extracurricular" required>
-                                        <option value="1">Yes</option>
-                                        <option value="0" selected>No</option>
+                                    <label for="location">Location (City)</label>
+                                    <select id="location" name="location" required>
+                                        <option value="" disabled selected>Select City</option>
+                                        <option value="Pune">Pune</option>
+                                        <option value="Mumbai">Mumbai</option>
+                                        <option value="Bengaluru">Bengaluru</option>
+                                        <option value="Delhi">Delhi</option>
+                                        <option value="Thane">Thane</option>
+                                        <option value="Hyderabad">Hyderabad</option>
+                                        <option value="Noida">Noida</option>
+                                        <option value="Chhatrapati Sambhajinagar">Chhatrapati Sambhajinagar (Aurangabad)</option>
+                                        <option value="Nashik">Nashik</option>
+                                        <option value="Nagpur">Nagpur</option>
                                     </select>
                                 </div>
 
                                 <div class="form-field">
-                                    <label for="internet_access">Internet Access</label>
-                                    <select id="internet_access" name="internet_access" required>
-                                        <option value="1" selected>Yes</option>
-                                        <option value="0">No</option>
+                                    <label for="property_type">Property Type</label>
+                                    <select id="property_type" name="property_type" required>
+                                        <option value="Apartment" selected>Apartment</option>
+                                        <option value="Independent House">Independent House</option>
+                                        <option value="Villa">Villa</option>
+                                        <option value="Studio">Studio</option>
+                                        <option value="1 RK">1 RK</option>
                                     </select>
                                 </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-field">
+                                        <label for="bedrooms">Bedrooms (BHK)</label>
+                                        <select id="bedrooms" name="bedrooms" required>
+                                            <option value="1">1 BHK</option>
+                                            <option value="2" selected>2 BHK</option>
+                                            <option value="3">3 BHK</option>
+                                            <option value="4">4 BHK</option>
+                                            <option value="5">5 BHK</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="bathrooms">Bathrooms</label>
+                                        <select id="bathrooms" name="bathrooms" required>
+                                            <option value="1">1</option>
+                                            <option value="2" selected>2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="area_sqft">Area (sq ft) <span class="field-hint">Range: 200–10,000</span></label>
+                                    <input type="number" id="area_sqft" name="area_sqft" min="200" max="10000" step="25" placeholder="e.g. 950" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 2: Property Condition -->
+                        <div class="form-group-block">
+                            <h3 class="block-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14 2 14 8 20 8"/>
+                                </svg>
+                                Property Condition & Floors
+                            </h3>
+
+                            <div class="fields-stack">
+                                <div class="form-field">
+                                    <label for="furnishing">Furnishing Status</label>
+                                    <select id="furnishing" name="furnishing" required>
+                                        <option value="Unfurnished">Unfurnished</option>
+                                        <option value="Semi-Furnished" selected>Semi-Furnished</option>
+                                        <option value="Fully Furnished">Fully Furnished</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="property_age">Property Age (years) <span class="field-hint">0–100 years</span></label>
+                                    <input type="number" id="property_age" name="property_age" min="0" max="100" step="1" placeholder="e.g. 5" value="5" required>
+                                </div>
+
+                                <div class="form-row-2">
+                                    <div class="form-field">
+                                        <label for="floor_number">Floor Number <span class="field-hint">0–100</span></label>
+                                        <input type="number" id="floor_number" name="floor_number" min="0" max="100" step="1" placeholder="e.g. 4" value="4" required>
+                                    </div>
+                                    <div class="form-field">
+                                        <label for="total_floors">Total Floors <span class="field-hint">1–100</span></label>
+                                        <input type="number" id="total_floors" name="total_floors" min="1" max="100" step="1" placeholder="e.g. 12" value="12" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="parking">Parking Space</label>
+                                    <select id="parking" name="parking" required>
+                                        <option value="1" selected>Yes (Dedicated Parking)</option>
+                                        <option value="0">No Parking</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Group 3: Features & Amenities -->
+                        <div class="form-group-block full-width-block">
+                            <h3 class="block-title">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                Features & Amenities
+                            </h3>
+                            <p class="amenities-subtext">Select all amenities available at the property:</p>
+
+                            <div class="amenities-checkbox-grid">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Lift" checked>
+                                    <span class="custom-checkbox"></span>
+                                    <span>Lift</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Security" checked>
+                                    <span class="custom-checkbox"></span>
+                                    <span>Security</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Gym">
+                                    <span class="custom-checkbox"></span>
+                                    <span>Gym</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Swimming Pool">
+                                    <span class="custom-checkbox"></span>
+                                    <span>Swimming Pool</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Power Backup" checked>
+                                    <span class="custom-checkbox"></span>
+                                    <span>Power Backup</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Garden">
+                                    <span class="custom-checkbox"></span>
+                                    <span>Garden</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="amenity" value="Gas Pipeline">
+                                    <span class="custom-checkbox"></span>
+                                    <span>Gas Pipeline</span>
+                                </label>
                             </div>
                         </div>
 
                     </div>
 
-                    <!-- Error Alert Area -->
+                    <!-- Error Alert -->
                     <div id="error-message" class="error-alert hidden" role="alert"></div>
 
-                    <!-- Predict Button -->
-                    <div class="form-submit-container">
+                    <!-- Submit Button -->
+                    <div class="form-submit-row">
                         <button type="submit" id="predict-btn" class="btn btn-primary btn-submit">
-                            <span class="btn-text">Predict My Performance →</span>
+                            <span class="btn-text">Estimate Rental Price →</span>
                             <span class="spinner hidden" id="btn-spinner"></span>
                         </button>
                     </div>
                 </form>
             </div>
 
-            <!-- RESULT CARD -->
-            <div id="result-card" class="result-card-container hidden">
-                <div class="result-card-inner">
-                    <div class="result-top-bar">
-                        <span class="result-kicker">YOUR PREDICTED PERFORMANCE</span>
-                        <span class="result-badge" id="category-badge">VERY GOOD</span>
+            <!-- RESULT CARD SECTION -->
+            <div id="result-card" class="result-card-wrapper hidden">
+                <div class="result-card">
+                    <div class="result-top-badge">
+                        <span>YOUR ESTIMATED MONTHLY RENT</span>
                     </div>
 
-                    <div class="result-main-score">
-                        <div class="score-display" id="prediction-val">78.42%</div>
-                        <div class="score-progress-track">
-                            <div class="score-progress-fill" id="result-progress-bar" style="width: 0%;"></div>
+                    <div class="result-price-box">
+                        <div class="result-main-price" id="prediction-val">₹24,500</div>
+                        <div class="result-period">per month</div>
+                        
+                        <div class="indicative-range-pill">
+                            <span class="range-title">Indicative Estimate Range:</span>
+                            <strong id="indicative-range-val">₹21,500 – ₹27,500</strong>
                         </div>
-                        <p class="score-explanation">
-                            Based on the information provided, the model estimates your expected final academic percentage.
+                        <p class="range-disclaimer-note">
+                            Based on the property information provided. This range is an indicative estimate, not a statistical confidence interval.
                         </p>
                     </div>
 
-                    <!-- Performance Analysis Progress Indicators -->
-                    <div class="result-breakdown-section">
-                        <h4>Performance Analysis</h4>
-                        <div class="breakdown-grid">
-                            <div class="breakdown-item">
-                                <div class="breakdown-meta">
-                                    <span>Attendance</span>
-                                    <span id="breakdown-attendance-val">0%</span>
+                    <!-- Property Summary -->
+                    <div class="result-section-box">
+                        <h4>Property Summary</h4>
+                        <div class="summary-grid" id="property-summary-container">
+                            <div class="summary-chip">
+                                <span class="chip-k">Location:</span>
+                                <span class="chip-v" id="sum-location">Pune</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Type:</span>
+                                <span class="chip-v" id="sum-type">Apartment</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Bedrooms:</span>
+                                <span class="chip-v" id="sum-bhk">2 BHK</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Bathrooms:</span>
+                                <span class="chip-v" id="sum-baths">2</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Area:</span>
+                                <span class="chip-v" id="sum-area">950 sq ft</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Furnishing:</span>
+                                <span class="chip-v" id="sum-furn">Semi-Furnished</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Parking:</span>
+                                <span class="chip-v" id="sum-parking">Yes</span>
+                            </div>
+                            <div class="summary-chip">
+                                <span class="chip-k">Amenities:</span>
+                                <span class="chip-v" id="sum-amenities">3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rent Analysis Visual Indicators -->
+                    <div class="result-section-box">
+                        <h4>Rent Analysis</h4>
+                        <div class="analysis-bars-stack">
+                            <div class="analysis-bar-item">
+                                <div class="bar-meta">
+                                    <span>Property Size</span>
+                                    <span id="analysis-size-text">Standard (950 sq ft)</span>
                                 </div>
-                                <div class="breakdown-track">
-                                    <div class="breakdown-fill" id="breakdown-attendance-bar"></div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" id="meter-size-fill" style="width: 50%;"></div>
                                 </div>
                             </div>
-
-                            <div class="breakdown-item">
-                                <div class="breakdown-meta">
-                                    <span>Previous Performance</span>
-                                    <span id="breakdown-previous-val">0%</span>
+                            <div class="analysis-bar-item">
+                                <div class="bar-meta">
+                                    <span>Amenities Profile</span>
+                                    <span id="analysis-amenities-text">Moderate (3/7)</span>
                                 </div>
-                                <div class="breakdown-track">
-                                    <div class="breakdown-fill" id="breakdown-previous-bar"></div>
-                                </div>
-                            </div>
-
-                            <div class="breakdown-item">
-                                <div class="breakdown-meta">
-                                    <span>Assignment Score</span>
-                                    <span id="breakdown-assignment-val">0%</span>
-                                </div>
-                                <div class="breakdown-track">
-                                    <div class="breakdown-fill" id="breakdown-assignment-bar"></div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" id="meter-amenities-fill" style="width: 43%;"></div>
                                 </div>
                             </div>
-
-                            <div class="breakdown-item">
-                                <div class="breakdown-meta">
-                                    <span>Internal Score</span>
-                                    <span id="breakdown-internal-val">0%</span>
+                            <div class="analysis-bar-item">
+                                <div class="bar-meta">
+                                    <span>Property Condition</span>
+                                    <span id="analysis-condition-text">Good (5 yrs old)</span>
                                 </div>
-                                <div class="breakdown-track">
-                                    <div class="breakdown-fill" id="breakdown-internal-bar"></div>
-                                </div>
-                            </div>
-
-                            <div class="breakdown-item">
-                                <div class="breakdown-meta">
-                                    <span>Study Hours</span>
-                                    <span id="breakdown-study-val">0 hrs</span>
-                                </div>
-                                <div class="breakdown-track">
-                                    <div class="breakdown-fill" id="breakdown-study-bar"></div>
+                                <div class="meter-track">
+                                    <div class="meter-fill" id="meter-condition-fill" style="width: 75%;"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Personalized Recommendations -->
-                    <div class="result-recommendation-section">
-                        <h4>Personalized Recommendations</h4>
-                        <p id="recommendation-text">Maintain consistent effort in your academic routine.</p>
+                    <!-- Official Disclaimers -->
+                    <div class="result-disclaimer-box">
+                        <p><strong>Important:</strong> This is a machine learning estimate and not an official market valuation.</p>
+                        <p class="disclaimer-full">
+                            <strong>Disclaimer:</strong> The rental price shown is an ML-generated estimate based on the available training data and submitted property characteristics. It is not a certified property valuation or guaranteed market price. Actual rental prices may vary based on locality, demand, property condition, negotiation and market conditions.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -559,13 +653,13 @@
 
     <!-- Professional Footer -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="footer-inner">
             <div class="footer-brand">
-                <span class="footer-logo">Student Performance AI</span>
-                <span class="footer-tech">Machine Learning • Flask • Scikit-learn</span>
+                <span class="footer-title">RentalPrice AI</span>
+                <span class="footer-sub">Machine Learning • Flask • Scikit-Learn</span>
             </div>
-            <p class="footer-note">Educational project for academic performance analysis.</p>
-            <div class="footer-copyright">© 2026 Student Performance AI</div>
+            <p class="footer-mission">Data-driven rental property intelligence and regression analytics.</p>
+            <div class="footer-copy">© 2026 RentalPrice AI. All rights reserved.</div>
         </div>
     </footer>
 </body>

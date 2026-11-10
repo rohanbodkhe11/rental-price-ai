@@ -1,94 +1,108 @@
 import os
 import sys
-import joblib
 import numpy as np
 import pandas as pd
+import joblib
+
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-def train_student_model():
-    print("Model Training Started...\n")
-    
-    csv_file = "student_performance.csv"
+def train_rental_model():
+    print("=" * 50)
+    print("RENTAL HOUSE PRICE MODEL TRAINING")
+    print("=" * 50)
+
+    csv_file = "rental_house_data.csv"
     if not os.path.exists(csv_file):
-        print(f"Error: {csv_file} not found. Please ensure the dataset file exists.")
+        print(f"Error: {csv_file} not found.")
         sys.exit(1)
-        
+
     df = pd.read_csv(csv_file)
-    print(f"Loaded dataset: {df.shape[0]} rows, {df.shape[1]} columns")
-    
-    # Check for missing values
-    if df.isnull().sum().sum() > 0:
-        print("Handling missing values...")
-        df = df.dropna()
+    print(f"Dataset loaded successfully.\nRecords: {len(df)}\n")
 
-    # Defined feature order
-    feature_columns = [
-        "study_hours",
-        "attendance",
-        "previous_percentage",
-        "assignment_score",
-        "internal_score",
-        "sleep_hours",
-        "extracurricular",
-        "internet_access",
-        "backlogs"
+    # Clean & validate
+    df = df.dropna()
+    df = df.drop_duplicates()
+
+    # Features and target
+    categorical_features = ['location', 'property_type', 'furnishing']
+    numerical_features = [
+        'bedrooms',
+        'bathrooms',
+        'area_sqft',
+        'property_age',
+        'floor_number',
+        'total_floors',
+        'parking',
+        'amenity_count'
     ]
-    target_column = "final_percentage"
 
-    X = df[feature_columns]
-    y = df[target_column]
+    all_features = categorical_features + numerical_features
+    target = 'rent'
 
-    # Split dataset
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
+    X = df[all_features]
+    y = df[target]
+
+    # Preprocessing pipeline
+    preprocessor = ColumnTransformer(
+        transformers=[
+            ('cat', OneHotEncoder(handle_unknown='ignore', sparse_output=False), categorical_features),
+            ('num', 'passthrough', numerical_features)
+        ]
     )
 
-    # 1. Linear Regression
-    lr = LinearRegression()
-    lr.fit(X_train, y_train)
-    lr_preds = lr.predict(X_test)
+    # Train / test split (80/20)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.20, random_state=42
+    )
 
-    lr_mae = mean_absolute_error(y_test, lr_preds)
-    lr_mse = mean_squared_error(y_test, lr_preds)
-    lr_rmse = np.sqrt(lr_mse)
-    lr_r2 = r2_score(y_test, lr_preds)
+    models = {
+        "Linear Regression": LinearRegression(),
+        "Random Forest": RandomForestRegressor(n_estimators=120, max_depth=16, random_state=42),
+        "Gradient Boosting": GradientBoostingRegressor(n_estimators=120, learning_rate=0.1, max_depth=5, random_state=42)
+    }
 
-    print("Linear Regression")
-    print(f"MAE: {lr_mae:.4f}")
-    print(f"RMSE: {lr_rmse:.4f}")
-    print(f"R2 Score: {lr_r2:.4f}\n")
+    print("Training models...\n")
 
-    # 2. Random Forest Regressor
-    rf = RandomForestRegressor(n_estimators=100, random_state=42)
-    rf.fit(X_train, y_train)
-    rf_preds = rf.predict(X_test)
+    best_score = -float("inf")
+    best_model_name = None
+    best_pipeline = None
 
-    rf_mae = mean_absolute_error(y_test, rf_preds)
-    rf_mse = mean_squared_error(y_test, rf_preds)
-    rf_rmse = np.sqrt(rf_mse)
-    rf_r2 = r2_score(y_test, rf_preds)
+    for name, regressor in models.items():
+        pipeline = Pipeline(steps=[
+            ('preprocessor', preprocessor),
+            ('regressor', regressor)
+        ])
 
-    print("Random Forest")
-    print(f"MAE: {rf_mae:.4f}")
-    print(f"RMSE: {rf_rmse:.4f}")
-    print(f"R2 Score: {rf_r2:.4f}\n")
+        pipeline.fit(X_train, y_train)
+        y_pred = pipeline.predict(X_test)
 
-    # Select best model based on R2 Score
-    if rf_r2 >= lr_r2:
-        best_model = rf
-        best_model_name = "Random Forest"
-    else:
-        best_model = lr
-        best_model_name = "Linear Regression"
+        mae = mean_absolute_error(y_test, y_pred)
+        rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+        r2 = r2_score(y_test, y_pred)
 
-    print(f"Best Model: {best_model_name}\n")
+        print(name)
+        print(f"MAE  : ₹{mae:,.2f}")
+        print(f"RMSE : ₹{rmse:,.2f}")
+        print(f"R²   : {r2:.4f}\n")
 
-    # Save best model
-    joblib.dump(best_model, "model.pkl")
+        if r2 > best_score:
+            best_score = r2
+            best_model_name = name
+            best_pipeline = pipeline
+
+    print("=" * 50)
+    print("BEST MODEL")
+    print("=" * 50)
+    print(f"Model: {best_model_name} (R²: {best_score:.4f})\n")
+
+    joblib.dump(best_pipeline, "model.pkl")
     print("Model saved successfully as model.pkl")
 
 if __name__ == "__main__":
-    train_student_model()
+    train_rental_model()
