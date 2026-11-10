@@ -28,18 +28,36 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "model.pkl")
 
-# Valid options
+# Valid Maharashtra & Metro Locations
 VALID_LOCATIONS = [
-    'Chhatrapati Sambhajinagar',
-    'Pune',
     'Mumbai',
+    'Pune',
+    'Thane',
+    'Navi Mumbai',
+    'Chhatrapati Sambhajinagar',
     'Nashik',
     'Nagpur',
-    'Thane',
+    'Kolhapur',
+    'Solapur',
+    'Amravati',
+    'Nanded',
+    'Sangli',
+    'Satara',
+    'Latur',
+    'Jalgaon',
+    'Akola',
+    'Ahmednagar',
+    'Ratnagiri',
     'Bengaluru',
     'Hyderabad',
     'Delhi',
     'Noida'
+]
+
+VALID_LOCALITY_TYPES = [
+    'Urban',
+    'Suburban',
+    'Rural'
 ]
 
 VALID_PROPERTY_TYPES = [
@@ -97,6 +115,7 @@ def predict():
 
         required_fields = [
             'location',
+            'locality_type',
             'property_type',
             'bedrooms',
             'bathrooms',
@@ -118,9 +137,12 @@ def predict():
             }), 400
 
         location_raw = str(data['location']).strip()
-        # Handle alias
-        if location_raw.lower() == 'aurangabad':
+        # Handle aliases
+        loc_lower = location_raw.lower()
+        if loc_lower == 'aurangabad':
             location = 'Chhatrapati Sambhajinagar'
+        elif loc_lower == 'ahilyanagar':
+            location = 'Ahmednagar'
         else:
             location = location_raw
 
@@ -128,6 +150,13 @@ def predict():
             return jsonify({
                 "success": False,
                 "error": f"Invalid location '{location}'. Please choose a supported city."
+            }), 400
+
+        locality_type = str(data['locality_type']).strip().capitalize()
+        if locality_type not in VALID_LOCALITY_TYPES:
+            return jsonify({
+                "success": False,
+                "error": f"Invalid locality type '{locality_type}'. Choose Urban, Suburban, or Rural."
             }), 400
 
         property_type = str(data['property_type']).strip()
@@ -197,6 +226,7 @@ def predict():
         # Create input DataFrame matching feature columns
         input_df = pd.DataFrame([{
             'location': location,
+            'locality_type': locality_type,
             'property_type': property_type,
             'bedrooms': bedrooms,
             'bathrooms': bathrooms,
@@ -210,10 +240,10 @@ def predict():
         }])
 
         raw_pred = model.predict(input_df)[0]
-        pred_rent = max(3500, int(round(raw_pred)))
+        pred_rent = max(2500, int(round(raw_pred)))
 
         # Calculate indicative estimate range (+- 12%)
-        lower_bound = max(3000, int(round(pred_rent * 0.88)))
+        lower_bound = max(2000, int(round(pred_rent * 0.88)))
         upper_bound = int(round(pred_rent * 1.12))
 
         formatted_rent = format_inr(pred_rent)

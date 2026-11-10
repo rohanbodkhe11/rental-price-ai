@@ -10,6 +10,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
+from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 def train_rental_model():
     print("=" * 50)
@@ -29,7 +30,7 @@ def train_rental_model():
     df = df.drop_duplicates()
 
     # Features and target
-    categorical_features = ['location', 'property_type', 'furnishing']
+    categorical_features = ['location', 'locality_type', 'property_type', 'furnishing']
     numerical_features = [
         'bedrooms',
         'bathrooms',
@@ -62,13 +63,11 @@ def train_rental_model():
 
     models = {
         "Linear Regression": LinearRegression(),
-        "Random Forest": RandomForestRegressor(n_estimators=150, max_depth=18, random_state=42),
-        "Extra Trees": ExtraTreesRegressor(n_estimators=150, max_depth=18, random_state=42)
+        "Random Forest": RandomForestRegressor(n_estimators=160, max_depth=18, random_state=42),
+        "Extra Trees": ExtraTreesRegressor(n_estimators=160, max_depth=18, random_state=42)
     }
 
     print("Training models...\n")
-
-    from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
     best_score = -float("inf")
     best_model_name = None

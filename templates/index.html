@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RentalPrice AI - Rental House Price Predictor</title>
-    <meta name="description" content="AI-powered residential rental price estimation using Machine Learning regression. Analyze property characteristics, locations, size, and amenities.">
+    <meta name="description" content="AI-powered residential rental price estimation using Machine Learning regression across Maharashtra urban and rural areas.">
     <meta property="og:title" content="RentalPrice AI - Rental House Price Predictor">
     <meta property="og:description" content="AI-powered residential rental price estimation using Machine Learning regression.">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -51,16 +51,16 @@
                 <div class="hero-content">
                     <div class="hero-pill">
                         <span class="pulse-indicator"></span>
-                        AI-POWERED REAL ESTATE VALUATION
+                        MAHARASHTRA URBAN & RURAL VALUATION ENGINE
                     </div>
                     <h1 class="hero-title">
                         Know the Value of Your Next Rental.
                     </h1>
                     <p class="hero-subtitle">
-                        AI-powered rental price estimation based on property characteristics.
+                        AI-powered rental price estimation for Urban, Suburban, and Rural Maharashtra.
                     </p>
                     <p class="hero-description">
-                        Estimate the monthly rental value of a residential property using machine learning models trained on property characteristics, location, size, furnishing, amenities and other factors.
+                        Estimate the monthly rental value of a residential property using machine learning models trained on property characteristics, location, urban/rural area classification, size, furnishing, amenities and other factors.
                     </p>
                     <div class="hero-buttons">
                         <a href="#prediction" class="btn btn-primary">
@@ -86,11 +86,11 @@
                         <div class="demo-property-info">
                             <span class="demo-kicker">RENTAL ESTIMATE</span>
                             <h3>2 BHK Apartment</h3>
-                            <p class="demo-loc">Pune, Maharashtra</p>
+                            <p class="demo-loc">Pune (Urban Core), Maharashtra</p>
                         </div>
                         <div class="demo-estimate-box">
                             <span class="est-label">Estimated Monthly Rent</span>
-                            <div class="est-price">₹24,500 <span class="est-period">/ mo</span></div>
+                            <div class="est-price">₹32,500 <span class="est-period">/ mo</span></div>
                             <div class="demo-progress-track">
                                 <div class="demo-progress-fill"></div>
                             </div>
@@ -101,8 +101,8 @@
                                 <span class="spec-val">950 sq ft</span>
                             </div>
                             <div class="demo-spec">
-                                <span class="spec-label">Furnishing</span>
-                                <span class="spec-val">Semi-Furnished</span>
+                                <span class="spec-label">Area Type</span>
+                                <span class="spec-val">Urban</span>
                             </div>
                             <div class="demo-spec">
                                 <span class="spec-label">Parking</span>
@@ -123,11 +123,11 @@
                     <span class="stat-desc">Regression Models</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-num">12+</span>
-                    <span class="stat-desc">Property Features</span>
+                    <span class="stat-num">13+</span>
+                    <span class="stat-desc">Property Factors</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-num">1500+</span>
+                    <span class="stat-num">3000+</span>
                     <span class="stat-desc">Training Records</span>
                 </div>
                 <div class="stat-card">
@@ -141,9 +141,9 @@
         <section class="content-section" id="why-prediction">
             <div class="section-heading">
                 <span class="section-tag">VALUATION INTELLIGENCE</span>
-                <h2>Smarter Rental Decisions</h2>
+                <h2>Smarter Rental Decisions Across Regions</h2>
                 <p class="section-lead">
-                    Rental prices depend on multiple property and location factors. A machine learning model can analyze these relationships and provide a data-driven estimate to support rental decisions.
+                    Rental prices vary significantly between urban city cores, suburban townships, and rural areas. Our machine learning model accounts for geographical classification alongside physical property traits.
                 </p>
             </div>
 
@@ -167,8 +167,8 @@
                             <circle cx="12" cy="10" r="3"/>
                         </svg>
                     </div>
-                    <h3>Location-Aware Estimation</h3>
-                    <p>Location is one of the important factors affecting rental value, factoring in regional demand indices.</p>
+                    <h3>Urban vs. Rural Pricing</h3>
+                    <p>Accounts for location density, distinguish city cores, suburban developments, and rural village settings.</p>
                 </div>
 
                 <div class="feature-card">
@@ -194,7 +194,7 @@
                 <div class="step-box">
                     <span class="step-num">01</span>
                     <h3>Property Details</h3>
-                    <p>Enter location and property characteristics.</p>
+                    <p>Enter location, urban/rural classification, and property characteristics.</p>
                 </div>
                 <div class="step-box">
                     <span class="step-num">02</span>
@@ -232,18 +232,18 @@
                     <p class="model-desc">Establishes foundational linear relationships between property dimensions and rental rates.</p>
                 </div>
 
-                <div class="model-box">
-                    <span class="model-tag">ENSEMBLE</span>
+                <div class="model-box model-highlight">
+                    <span class="model-tag highlight-tag">ENSEMBLE</span>
                     <h3>Random Forest</h3>
                     <p class="model-category">Ensemble</p>
                     <p class="model-desc">Aggregates decision trees to capture non-linear interactions across features and floor plans.</p>
                 </div>
 
-                <div class="model-box model-highlight">
-                    <span class="model-tag highlight-tag">ADVANCED</span>
-                    <h3>Gradient Boosting</h3>
+                <div class="model-box">
+                    <span class="model-tag">ENSEMBLE</span>
+                    <h3>Extra Trees</h3>
                     <p class="model-category">Ensemble</p>
-                    <p class="model-desc">Sequentially refines residual error to minimize variance and yield precise rental valuations.</p>
+                    <p class="model-desc">Randomized tree ensemble minimizing variance across regional location and area type categories.</p>
                 </div>
             </div>
 
@@ -273,11 +273,15 @@
             <div class="card-grid factors-grid">
                 <div class="factor-item">
                     <h4>Location</h4>
-                    <p>Major urban centres and high-demand metro localities command higher rental benchmarks.</p>
+                    <p>Major urban centres and districts across Maharashtra and top Indian metros.</p>
+                </div>
+                <div class="factor-item">
+                    <h4>Area Type</h4>
+                    <p>Urban city core, suburban townships, or rural village classifications.</p>
                 </div>
                 <div class="factor-item">
                     <h4>Property Type</h4>
-                    <p>Villas, standalone houses, and studio apartments exhibit unique rental yield profiles.</p>
+                    <p>Villas, standalone houses, studio apartments, and 1 RK units.</p>
                 </div>
                 <div class="factor-item">
                     <h4>Bedrooms</h4>
@@ -285,7 +289,7 @@
                 </div>
                 <div class="factor-item">
                     <h4>Bathrooms</h4>
-                    <p>En-suite and dedicated bathroom ratios influence tenant convenience and rentability.</p>
+                    <p>En-suite and dedicated bathroom ratios influence tenant convenience.</p>
                 </div>
                 <div class="factor-item">
                     <h4>Area</h4>
@@ -293,23 +297,19 @@
                 </div>
                 <div class="factor-item">
                     <h4>Furnishing</h4>
-                    <p>Fully furnished units with appliances and interior fittings offer immediate move-in premiums.</p>
+                    <p>Fully furnished units offer immediate move-in premiums over unfurnished homes.</p>
                 </div>
                 <div class="factor-item">
                     <h4>Property Age</h4>
-                    <p>Brand-new residential constructions generally command premium rental rates over older properties.</p>
+                    <p>Brand-new residential constructions generally command premium rental rates.</p>
                 </div>
                 <div class="factor-item">
                     <h4>Floor</h4>
-                    <p>Middle and high-rise floors often carry views and natural ventilation appeal in high-density areas.</p>
-                </div>
-                <div class="factor-item">
-                    <h4>Parking</h4>
-                    <p>Reserved four-wheeler covered parking adds meaningful value in urban apartment complexes.</p>
+                    <p>Middle and high-rise floors often carry views and natural ventilation appeal.</p>
                 </div>
                 <div class="factor-item">
                     <h4>Amenities</h4>
-                    <p>Access to lifts, backup power, 24/7 security, gym, and swimming pools enhances tenant demand.</p>
+                    <p>Access to lifts, backup power, 24/7 security, gym, and swimming pools.</p>
                 </div>
             </div>
         </section>
@@ -373,24 +373,49 @@
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
                                     <polyline points="9 22 9 12 15 12 15 22"/>
                                 </svg>
-                                Property Details
+                                Property & Location Details
                             </h3>
 
                             <div class="fields-stack">
                                 <div class="form-field">
-                                    <label for="location">Location (City)</label>
+                                    <label for="location">Location (City / District)</label>
                                     <select id="location" name="location" required>
-                                        <option value="" disabled selected>Select City</option>
-                                        <option value="Pune">Pune</option>
-                                        <option value="Mumbai">Mumbai</option>
-                                        <option value="Bengaluru">Bengaluru</option>
-                                        <option value="Delhi">Delhi</option>
-                                        <option value="Thane">Thane</option>
-                                        <option value="Hyderabad">Hyderabad</option>
-                                        <option value="Noida">Noida</option>
-                                        <option value="Chhatrapati Sambhajinagar">Chhatrapati Sambhajinagar (Aurangabad)</option>
-                                        <option value="Nashik">Nashik</option>
-                                        <option value="Nagpur">Nagpur</option>
+                                        <option value="" disabled selected>Select City/District</option>
+                                        <optgroup label="Maharashtra Cities & Districts">
+                                            <option value="Mumbai">Mumbai</option>
+                                            <option value="Pune">Pune</option>
+                                            <option value="Thane">Thane</option>
+                                            <option value="Navi Mumbai">Navi Mumbai</option>
+                                            <option value="Chhatrapati Sambhajinagar">Chhatrapati Sambhajinagar (Aurangabad)</option>
+                                            <option value="Nashik">Nashik</option>
+                                            <option value="Nagpur">Nagpur</option>
+                                            <option value="Kolhapur">Kolhapur</option>
+                                            <option value="Solapur">Solapur</option>
+                                            <option value="Amravati">Amravati</option>
+                                            <option value="Nanded">Nanded</option>
+                                            <option value="Sangli">Sangli</option>
+                                            <option value="Satara">Satara</option>
+                                            <option value="Latur">Latur</option>
+                                            <option value="Jalgaon">Jalgaon</option>
+                                            <option value="Akola">Akola</option>
+                                            <option value="Ahmednagar">Ahmednagar (Ahilyanagar)</option>
+                                            <option value="Ratnagiri">Ratnagiri</option>
+                                        </optgroup>
+                                        <optgroup label="Major Indian Metros">
+                                            <option value="Bengaluru">Bengaluru</option>
+                                            <option value="Hyderabad">Hyderabad</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Noida">Noida</option>
+                                        </optgroup>
+                                    </select>
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="locality_type">Locality Area Type</label>
+                                    <select id="locality_type" name="locality_type" required>
+                                        <option value="Urban" selected>Urban (City Core / Commercial Hub)</option>
+                                        <option value="Suburban">Suburban (Outskirts / Town)</option>
+                                        <option value="Rural">Rural (Village / Gram Panchayat)</option>
                                     </select>
                                 </div>
 
@@ -574,6 +599,10 @@
                                 <span class="chip-v" id="sum-location">Pune</span>
                             </div>
                             <div class="summary-chip">
+                                <span class="chip-k">Area Type:</span>
+                                <span class="chip-v" id="sum-locality-type">Urban</span>
+                            </div>
+                            <div class="summary-chip">
                                 <span class="chip-k">Type:</span>
                                 <span class="chip-v" id="sum-type">Apartment</span>
                             </div>
@@ -592,10 +621,6 @@
                             <div class="summary-chip">
                                 <span class="chip-k">Furnishing:</span>
                                 <span class="chip-v" id="sum-furn">Semi-Furnished</span>
-                            </div>
-                            <div class="summary-chip">
-                                <span class="chip-k">Parking:</span>
-                                <span class="chip-v" id="sum-parking">Yes</span>
                             </div>
                             <div class="summary-chip">
                                 <span class="chip-k">Amenities:</span>
@@ -658,7 +683,7 @@
                 <span class="footer-title">RentalPrice AI</span>
                 <span class="footer-sub">Machine Learning • Flask • Scikit-Learn</span>
             </div>
-            <p class="footer-mission">Data-driven rental property intelligence and regression analytics.</p>
+            <p class="footer-mission">Data-driven rental property intelligence for Maharashtra urban and rural regions.</p>
             <div class="footer-copy">© 2026 RentalPrice AI. All rights reserved.</div>
         </div>
     </footer>

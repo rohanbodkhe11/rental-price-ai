@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Summary elements
     const sumLocation = document.getElementById('sum-location');
+    const sumLocalityType = document.getElementById('sum-locality-type');
     const sumType = document.getElementById('sum-type');
     const sumBhk = document.getElementById('sum-bhk');
     const sumBaths = document.getElementById('sum-baths');
@@ -94,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Extract values
             const locationVal = document.getElementById('location')?.value;
+            const localityTypeVal = document.getElementById('locality_type')?.value || 'Urban';
             const propertyTypeVal = document.getElementById('property_type')?.value;
             const bedroomsVal = parseInt(document.getElementById('bedrooms')?.value, 10);
             const bathroomsVal = parseInt(document.getElementById('bathrooms')?.value, 10);
@@ -111,6 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Client-side Validations
             if (!locationVal) {
                 showError('Please select a property location.');
+                return;
+            }
+
+            if (!localityTypeVal) {
+                showError('Please select a locality area type (Urban, Suburban, or Rural).');
                 return;
             }
 
@@ -161,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const payload = {
                 location: locationVal,
+                locality_type: localityTypeVal,
                 property_type: propertyTypeVal,
                 bedrooms: bedroomsVal,
                 bathrooms: bathroomsVal,
@@ -211,6 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 2. Populate Property Summary from inputs
         if (sumLocation) sumLocation.textContent = inputs.location;
+        if (sumLocalityType) sumLocalityType.textContent = inputs.locality_type;
         if (sumType) sumType.textContent = inputs.property_type;
         if (sumBhk) sumBhk.textContent = `${inputs.bedrooms} BHK`;
         if (sumBaths) sumBaths.textContent = `${inputs.bathrooms}`;
