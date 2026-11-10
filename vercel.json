@@ -11,5 +11,7 @@
       "src": "/(.*)",
       "dest": "app.py"
     }
-  ]
+  ],
+  "installCommand": "echo 'Skipping npm install'",
+  "buildCommand": "echo 'No npm build required'"
 }
