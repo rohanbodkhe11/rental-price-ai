@@ -1,6 +1,6 @@
 {
-  "name": "Rental House Price Predictor",
-  "description": "AI-powered residential rental price estimation using Machine Learning regression across Maharashtra urban and rural regions.",
+  "name": "Student Performance Predictor",
+  "description": "Predict academic performance using Machine Learning",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
